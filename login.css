@@ -6,7 +6,7 @@
     padding: 0;
 }
 header,body,ul{
-    background-color: #24252A;
+    background-color: #24252AEF;
 }
 
 li, a, button, p, span, h1, label, .TOS{
@@ -29,11 +29,6 @@ body{
 .container{
     height: 100%;
     overflow: hidden;
-}
-
-header {
-    position: relative;
-    padding: 1vh 5vh;
 }
 
 input {
