@@ -44,6 +44,9 @@ body{
     overflow: hidden;
     white-space: nowrap;
 }
+.hero_overlay .title{
+
+}
 
 .hero_overlay_title{
     font-size: 3rem;
