@@ -14,9 +14,12 @@ li, a, button, p, span, h1{
     text-decoration: none;
 }
 body{
-    background-color: #24252AEF;
+    margin:0;
     font-family: Verdana, sans-serif;
     color:black;
+}
+main{
+    background-color: #24252AEF;
 }
 
 

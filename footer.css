@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+footer{
+    background-color: #24252A;
+}
 .footer_container{
     padding: 4rem 0 0;
-    background-color: #24252A;
     color: white;
 }
 
@@ -9,6 +12,7 @@
     justify-content: center;
     flex-wrap: nowrap;
     margin: 0 auto;
+
 }
 @media screen and (max-width: 550px){
     .footer{
@@ -72,4 +76,5 @@
 .copyright_text{
     color: #888888;
     font-size: 0.8em;
+    font-family: 'Montserrat', sans-serif;
 }

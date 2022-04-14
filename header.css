@@ -1,9 +1,10 @@
 header{
     position: relative;
     padding: 1vh 5vh;
+    background-color: #24252A;
+
 }
 .top-menu{
-    background-color: #24252A;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +17,6 @@ header{
 }
 
 .button_and_logo{
-    background-color: #24252A;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,9 +28,7 @@ header{
 .button_and_logo img{
     width: 12vw;
 }
-.menu_bar{
-    background-color: #24252A;
-}
+
 .menu_bar .menu{
     list-style: none;
     position: absolute;
@@ -85,7 +83,7 @@ ul.menu {
     position: absolute;
     bottom: 100%;
     left: 85%;
-    margin-left: -5px;
+    margin-left: -15px;
     border-width: 7px;
     border-style: solid;
     border-color: transparent transparent white transparent;
@@ -96,9 +94,7 @@ ul.menu {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 10px;
+    margin: 5px 10px 5px 20px;
     list-style-type: none;
     max-width: 30vh;
 
@@ -110,7 +106,7 @@ ul.profile-picture-menu {
     transition: all 0.3s ease 0s;
 }
 .profile-menu li a:hover{
-    color: #F26F6D;
+    color: #0c7dcd;
 }
 
 .menu_bar .profile-picture{

@@ -30,19 +30,17 @@ document.write('' +
     '        <nav class="profile-picture-menu">\n' +
     '            <ul role="profile" class="profile">\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="/profile">Signed in as x></a>\n' +
+    '                    <a href="/profile">Signed in as User</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
     '                    <a href="/statistics">Statistics</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="/workout-generator">Workout Generator</a>\n' +
+    '                    <a href="/workout-generator">Upload</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="/available-workouts">Available Workouts</a>\n' +
-    '                </li>\n' +
-    '                <li role="menuitem">\n' +
-    '                    <a href="/achievements">Achievements</a>\n' +
+    '                    <a href="dashboard.html">Dashboard</a>\n' +
+
     '                </li>\n' +
     '                <li role="menuitem">\n' +
     '                    <a href="/logout">Log out</a>\n' +
