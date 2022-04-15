@@ -18,10 +18,10 @@ document.write('' +
     '                <a href="../news.html">News</a>\n' +
     '            </li>\n' +
     '            <li role="menuitem">\n' +
-    '                <a href="#">About Us</a>\n' +
+    '                <a href="faq.html">FAQ</a>\n' +
     '            </li>\n' +
     '            <li role="menuitem">\n' +
-    '                <a href="#">Contact</a>\n' +
+    '                <a href="contact.html">Contact</a>\n' +
     '            </li>\n' +
     '        </ul>\n' +
     '    </nav>\n' +
