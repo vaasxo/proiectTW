@@ -33,7 +33,7 @@ document.write('' +
     '                    <a href="/profile">Signed in as User</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="notifications.html">Notifications</a>\n' +
+    '                    <a href="notifications.html">Notifications <h6>🔴</h6></a>\n<span ' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
     '                    <a href="upload.html">Upload</a>\n' +

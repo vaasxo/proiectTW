@@ -45,6 +45,9 @@ header{
     padding: 0 0.6vh;
 
 }
+h6{
+    display: inline;
+}
 
 ul.menu {
     list-style-type: none;

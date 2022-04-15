@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button, p, span, h1, body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+}
+body{
+    background-color: #24252AEF;
+}
+.title{
+    margin: 1rem;
+}
+.notifications-container{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 12px;
+}
+.notification{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(81, 82, 93, 0.94);
+
+}
+.notification-read{
+    display: flex;
+    flex-direction: row;
+    background-color: #24252A;
+}
+.notification-user {
+    border-radius: 60px;
+    width: 12vh;
+    margin: 1rem;
+    cursor: pointer;
+}
+.notification-info{
+    margin-left: 2rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+h5{
+    margin-top: 0.2rem;
+    color: #737171;
+}
+@media screen and (max-width: 450px){
+    .notification-user{
+        width: 10vh;
+        height: 10vh;
+    }
+}
