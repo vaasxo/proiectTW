@@ -33,7 +33,7 @@ document.write('' +
     '                    <a href="/profile">Signed in as User</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="/statistics">Statistics</a>\n' +
+    '                    <a href="notifications.html">Notifications</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
     '                    <a href="upload.html">Upload</a>\n' +
@@ -43,7 +43,7 @@ document.write('' +
 
     '                </li>\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="/logout">Log out</a>\n' +
+    '                    <a href="homepage.html">Log out</a>\n' +
     '                </li>\n' +
     '            </ul>\n' +
     '        </nav>\n' +
