@@ -36,7 +36,7 @@ document.write('' +
     '                    <a href="/statistics">Statistics</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="/workout-generator">Upload</a>\n' +
+    '                    <a href="upload.html">Upload</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
     '                    <a href="dashboard.html">Dashboard</a>\n' +

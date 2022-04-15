@@ -24,10 +24,16 @@ body{
     margin: 1em;
 }
 .autograph-image{
-    max-height: 70vh;
-    border: 2px solid white;
+    max-height: 50vh;
     border-radius: 16px;
+    margin-top: 2rem;
 }
+.autograph-image-select{
+    cursor: pointer;
+    margin: 1rem;
+}
+
+
 .autograph-data{
     margin-left: 1em;
     margin-top: 1em;
@@ -37,57 +43,77 @@ body{
     flex-direction: column;
     border-radius: 16px;
 }
-.autograph-data .item{
+p{
+    align-self: center;
+}
+.autograph-data .item, .item-for-tags{
     margin-left: 2em;
     margin-right: 2em;
-    align-self: flex-start;
+    align-self: flex-end;
 
 }
 .item-input{
     color: #f6f5f5;
     background: 0 0;
     line-height: 1.2;
-    border: 0px;
+    text-align: center;
 }
 .item-input:focus{
     outline: none;
 }
-.item label{
-    text-align: left;
-}
-.tags{
-    margin-left: 1em;
-}
-.flex-list{
+
+.button_plus {
     position: relative;
-    margin-left: 1em;
-    margin-right: 1em;
-    overflow:hidden;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    border: 2px solid #095776;
+    left: 70%;
 }
-.flex-list ul{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+
+.button_plus:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 4px;
+    width: 50%;
+    background: #095776;
+    top: 50%;
+    left: 50%;
 }
-.flex-list li{
-    flex-grow: 1;
-    margin: .25em 0;
-    padding: 0 1em;
-    text-align: center;
+
+.button_plus:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #095776;
+    height: 50%;
+    width: 4px;
 }
-.flex-list li:hover{
-    color: #0c7dcd;
-    margin: .25em .1em;
+
+.button_plus:hover:before,
+.button_plus:hover:after {
+    background: #fff;
+    transition: 0.2s;
 }
+
+.button_plus:hover {
+    background-color: #095776;
+    transition: 0.2s;
+}
+
 .button_container{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
-.save_button, .bid_button, .trade_button{
+.upload_button{
     margin:1em;
     font-size: 1em;
     color: #f6f5f5;
@@ -100,7 +126,7 @@ body{
     border-radius: 1vh;
     background: rgb(12, 85, 205);
 }
-.save_button:hover, .bid_button:hover, .trade_button:hover{
+.upload_button:hover{
     background-color: rgb(12, 125, 205);
 }
 @media screen and (max-width: 800px){
@@ -108,7 +134,10 @@ body{
         flex-direction: column;
         justify-content: center;
     }
-    .autograph-image{
-        max-height: 100vh;
+    figure{
+        max-width: 50vh;
+        max-height: 50vh;
+        align-self: center;
+        margin-bottom: 5rem;
     }
 }

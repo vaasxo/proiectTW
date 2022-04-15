@@ -12,7 +12,7 @@ function get_confirmation_marketplace(){
                 input_provided = true
             }
             else if(message === null){
-                alert('Autograph not added in marketplace.')
+                alert('Autograph will not be added in marketplace.')
                 document.getElementById('marketplace').checked = false;
                 break;
             }
