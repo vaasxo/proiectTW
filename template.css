@@ -6,16 +6,26 @@
     padding: 0;
 }
 
-li, a, button, p, span, h1, body{
+li, a, button, p, span, h1, body
+{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1em;
     color: #ffffff;
     text-decoration: none;
 }
-body{
+
+body
+{
     background-color: #24252AEF;
 }
 main{
     height: 30px;
+}
+
+.main-container
+{
+    display:flex;
+    
+
 }
