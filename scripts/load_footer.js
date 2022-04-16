@@ -4,7 +4,7 @@ document.write('' +
     '        <div class="footer">\n' +
     '            <div class="footer-heading footer-1">\n' +
     '                <h1>Discover Signature</h1>\n' +
-    '                <a href="#">About us</a>\n' +
+    '                <a href="aboutUs.html">About us</a>\n' +
     '                <a href="#">Newsletter</a>\n' +
     '                <a href="contact.html">Careers</a>\n' +
     '                <a href="register.html">Sign Up</a>\n' +

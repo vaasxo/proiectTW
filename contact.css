@@ -151,6 +151,11 @@ header img{
     border: none;
     border-radius: 1vh;
     background: rgb(12, 85, 205);
+    transition: all 0.3s ease 0s;
+}
+
+.submit_button:hover{
+    background-color: #0c7dcd;
 }
 
 .text_input_container{
