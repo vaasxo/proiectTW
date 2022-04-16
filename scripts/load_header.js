@@ -19,6 +19,9 @@ document.write('' +
     '                <a href="faq.html">FAQ</a>\n' +
     '            </li>\n' +
     '            <li role="menuitem">\n' +
+    '                <a href="aboutUs.html">About Us</a>\n' +
+    '            </li>\n' +
+    '            <li role="menuitem">\n' +
     '                <a href="contact.html">Contact</a>\n' +
     '            </li>\n' +
     '        </ul>\n' +
