@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
 }
-body,ul{
+header,body,ul{
     background-color: #24252AEF;
 }
 
@@ -31,52 +31,67 @@ body{
     overflow: hidden;
 }
 
-section {
-    display: block;
-}
-
 input {
     outline: none;
     border: none;
 }
 
-.register_form{
+section {
+    display: block;
+}
+
+.button_and_logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{
+    width: 12vw;
+}
+
+.site-logo{
+    cursor: pointer;
+}
+
+.menu_button{
+    padding: 1.3vh 1.3vh;
+    font-size: 1vw;
+    background-color: rgb(12, 85, 205);
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.menu_button:hover{
+    background-color: rgb(12, 125, 205);
+}
+
+.container_forgotPass{
+    width: 50vh;
+    background: transparent;
+    position: relative;
+}
+
+.forgotPass_form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.register_title{
+.forgotPass_title{
     text-align: center;
     font-size: 3.2em;
     margin-top: 1.5em;
 }
 
-.old_user{
+.forgotPass_subtitle{
     color: #f6f5f5;
     font-weight: 300;
     margin-bottom: 2em;
     text-align: center;
-}
-
-.signup_link a, .forgot_pass a, .TOS a, .new_user a{
-    cursor: pointer;
-    color: rgb(12, 125, 205);
-    text-decoration: none;
-}
-
-.signin_link a, .TOS a, .old_user a{
-    cursor: pointer;
-    color: rgb(12, 125, 205);
-    text-decoration: none;
-}
-
-.container_register{
-    width: 50vh;
-    height: auto;
-    background: transparent;
-    position: relative;
 }
 
 .email_input_container{
@@ -99,34 +114,13 @@ input {
     padding: 0 20px 0 38px;
 }
 
-.pass_input_container, .pass_confirm_input_container{
-    width: 100%;
-    position: relative;
-    background-color: transparent;
-    border-bottom: 1px solid #f6f5f5;
-    border-radius: 3px;
-    margin-bottom: 1em;
-}
-
-.pass_input, .pass_confirm_input{
-    color: #f6f5f5;
-    line-height: 1.2;
-    font-size: 18px;
-    display: block;
-    width: 100%;
-    background: 0 0;
-    height: 62px;
-    padding: 0 20px 0 38px;
-}
-
 .button_container{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 1em;
 }
 
-.register_button{
+.submit_button{
     font-size: 1em;
     color: #f6f5f5;
     display: flex;
@@ -140,17 +134,10 @@ input {
     transition: all 0.3s ease 0s;
 }
 
-.register_button:hover{
+.submit_button:hover{
     background-color: rgb(12, 125, 205);
 }
 
-.TOS{
-    text-align: center;
-    margin-top: 2em;
-    font-size: 0.7em;
-    width: 50vh;
-    line-height: 24px;
-}
 @media screen and (max-width: 550px){
     .menu_bar{
         font-size: 3vw;
@@ -161,7 +148,7 @@ input {
     .menu_button{
         font-size: 3.5vw;
     }
-    .container_register, .TOS{
+    .container_login, .TOS{
         width: 30vh;
     }
 }
