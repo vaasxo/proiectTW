@@ -103,14 +103,13 @@ The logo will be used to redirect the user to the main page. If the user is not 
 
 A navigation bar will be used for quick access to the most used/required pages, as it is visible in the following image from the home page:
 
-![image](https://user-images.githubusercontent.com/59650692/114320125-20b4aa80-9b1d-11eb-9c71-e40d5feb123b.png)
+![image](https://user-images.githubusercontent.com/59650692/163674662-8bdbe390-c7fa-473f-8bef-fc7cbd938dc6.png)
 
 The navigation bar will help the user get to the Marketplace, News, About Us and Contact pages upon arrival in the main page. Other options will be added once the users are logged in.
 
 The "Login" button will help the user connect to their account. This will be replaced by a photo of their profile once logged in (which can be used as a shortcut to get to their profile, as shown in the picture below:
 
-![image](https://user-images.githubusercontent.com/59650692/114320191-7ee18d80-9b1d-11eb-83f0-97eaa01fc302.png)
-
+![image](https://user-images.githubusercontent.com/59650692/163674677-1748ab09-a8e7-4e39-8587-f4df56961c61.png)
 
 ### 3.2 Hardware Interfaces
 The software aims to support any device types and avoid any hardware collisions or bottlenecks.
