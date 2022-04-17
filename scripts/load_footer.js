@@ -4,12 +4,12 @@ document.write('' +
     '        <div class="footer">\n' +
     '            <div class="footer-heading footer-1">\n' +
     '                <h1>Discover Signature</h1>\n' +
-    '                <a href="#">About us</a>\n' +
+    '                <a href="aboutUs.html">About us</a>\n' +
     '                <a href="#">Newsletter</a>\n' +
-    '                <a href="#">Careers</a>\n' +
-    '                <a href="#">Sign Up</a>\n' +
-    '                <a href="#">FAQ</a>\n' +
-    '                <a href="#">Support</a>\n' +
+    '                <a href="contact.html">Careers</a>\n' +
+    '                <a href="register.html">Sign Up</a>\n' +
+    '                <a href="faq.html">FAQ</a>\n' +
+    '                <a href="contact.html">Support</a>\n' +
     '            </div>\n' +
     '            <div class="footer-heading footer-2">\n' +
     '                <h1>Legal</h1>\n' +
@@ -19,8 +19,8 @@ document.write('' +
     '            </div>\n' +
     '            <div class="footer-heading footer-3">\n' +
     '                <h1>Socials</h1>\n' +
-    '                <a href="https://www.instagram.com/vaasxo/">Instagram</a>\n' +
-    '                <a href="https://www.facebook.com/vaasxo/">Facebook</a>\n' +
+    '                <a href="https://www.instagram.com/">Instagram</a>\n' +
+    '                <a href="https://www.facebook.com/">Facebook</a>\n' +
     '            </div>\n' +
     '        </div>\n' +
     '    </div>\n' +

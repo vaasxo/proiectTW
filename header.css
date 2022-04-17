@@ -118,7 +118,7 @@ ul.profile-picture-menu {
 
 .menu_bar .profile-picture{
     background-image: url("images/profile-picture.gif");
-    padding: 4vh 4vh;
+    padding: 2.2vh 2.2vh;
     background-size: cover;
     border:none;
     border-radius: 60px;

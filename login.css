@@ -166,6 +166,11 @@ header img{
     border: none;
     border-radius: 1vh;
     background: rgb(12, 85, 205);
+    transition: all 0.3s ease 0s;
+}
+
+.login_button:hover{
+    background-color: rgb(12, 125, 205);
 }
 
 .TOS{
