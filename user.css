@@ -180,5 +180,6 @@ main{
     }
     .support_text{
         width: 70vw;
+        height: 50vh;
     }
 }

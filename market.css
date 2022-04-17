@@ -148,3 +148,7 @@ span{
     justify-content: center;
 
   }
+.searchbar{
+    margin-right: 2rem;
+    margin-left: 2rem;
+}

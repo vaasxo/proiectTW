@@ -11,7 +11,7 @@ document.write('' +
     '                <a href="market.html">Marketplace</a>\n' +
     '            </li>\n' +
     '            <li role="menuitem">\n' +
-    '                <a href="../news.html">News</a>\n' +
+    '                <a href="news.html">News</a>\n' +
     '            </li>\n' +
     '            <li role="menuitem">\n' +
     '                <a href="faq.html">FAQ</a>\n' +
