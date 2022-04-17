@@ -3,9 +3,9 @@
     padding:0;
 }
 header{
-    position: relative;
     padding: 1vh 5vh;
     background-color: #24252A;
+    position: relative;
 
 }
 .top-menu{
@@ -17,13 +17,7 @@ header{
     cursor: pointer;
 }
 .top-menu img{
-    width:12vw;
-}
-
-.button_and_logo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width:20vh;
 }
 
 .site-logo{
@@ -35,10 +29,8 @@ header{
 
 .menu_bar .menu{
     list-style: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-right: 5rem;
+    margin-left: 4rem;
 }
 .menu_bar .menu li{
     display: inline-block;
@@ -61,10 +53,12 @@ ul.menu {
 
 .menu_button{
     padding: 1vh 1vh;
-    font-size: 1vw;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
     background-color: rgb(12, 85, 205);
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
@@ -82,6 +76,7 @@ ul.menu {
     top:10vh;
     right: 2em;
     font-size: 2vh;
+    z-index: 1;
 
 
 }
@@ -94,6 +89,7 @@ ul.menu {
     border-width: 7px;
     border-style: solid;
     border-color: transparent transparent white transparent;
+
 
 }
 .profile-menu .profile{
@@ -118,7 +114,7 @@ ul.profile-picture-menu {
 
 .menu_bar .profile-picture{
     background-image: url("images/profile-picture.gif");
-    padding: 2.2vh 2.2vh;
+    padding: 3.7vh 3.7vh;
     background-size: cover;
     border:none;
     border-radius: 60px;
@@ -129,17 +125,13 @@ ul.profile-picture-menu {
     box-shadow: none;
 }
 @media screen and (max-width: 550px){
-    .menu_bar{
-        font-size: 3.5vw;
-    }
+
     .menu_bar img{
-        width:20vw;
-    }
-    .menu_button{
-        font-size: 3vw;
+        width:20vh;
     }
     .menu_bar .menu{
-        left:55%;
+        margin-left:1rem;
+        margin-right: 1rem;
     }
 
 }

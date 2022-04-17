@@ -5,14 +5,10 @@ document.write('' +
     '        <a href="homepage.html" class="site-logo">\n' +
     '            <img src="images/logo.png" alt="logo" >\n' +
     '        </a>\n' +
-    '        <section class="profile-picture-container">\n' +
-    '            <button class="profile-picture" onclick="showMenu()"></button>\n' +
-    '        </section>\n' +
-    '    </section>\n' +
     '    <nav class="menu">\n' +
     '        <ul role="menu">\n' +
     '            <li role="menuitem">\n' +
-    '                <a href="../marketplace.html">Marketplace</a>\n' +
+    '                <a href="market.html">Marketplace</a>\n' +
     '            </li>\n' +
     '            <li role="menuitem">\n' +
     '                <a href="../news.html">News</a>\n' +
@@ -28,15 +24,20 @@ document.write('' +
     '            </li>\n' +
     '        </ul>\n' +
     '    </nav>\n' +
+    '        <section class="profile-picture-container">\n' +
+    '            <button class="profile-picture" onclick="showMenu()"></button>\n' +
+    '        </section>\n' +
+    '    </section>\n' +
+
     '</header>' +
     '<section class="profile-menu" id="profile-menu">\n' +
     '        <nav class="profile-picture-menu">\n' +
     '            <ul role="profile" class="profile">\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="/profile">Signed in as User</a>\n' +
+    '                    <a href="user.html">Signed in as User</a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
-    '                    <a href="notifications.html">Notifications <h6>🔴</h6></a>\n<span ' +
+    '                    <a href="notifications.html">Notifications <h6>🔴</h6></a>\n' +
     '                </li>\n' +
     '                <li role="menuitem">\n' +
     '                    <a href="upload.html">Upload</a>\n' +

@@ -21,9 +21,6 @@ body{
 main{
     background-color: #24252AEF;
 }
-
-
-
 .hero_container{
 
     position: relative;
@@ -40,23 +37,17 @@ main{
 
 .hero_overlay_title, .hero_overlay_subtitle{
     text-align: center;
+    display: block;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    clear: both;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.hero_overlay .title{
-
 }
 
 .hero_overlay_title{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .hero_overlay_subtitle{
-    font-size: 1.45rem;
+    font-size: 1.25rem;
     padding-top: 0;
 }
 
@@ -86,6 +77,7 @@ main{
 
 .get_started{
     padding: 1vh 1vh;
+    font-size: 1rem;
     background-color: rgb(12, 85, 205);
     border: none;
     border-radius: 2em;

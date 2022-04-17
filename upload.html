@@ -15,7 +15,8 @@
     <div class="autograph-container">
         <figure class="autograph-image-container">
             <img id="autograph-image" class="autograph-image" src="images/upload.png" alt="Image failed loading" >
-            <input class="autograph-image-select" name ="photo" type="file" accept="image/*" onchange="document.getElementById('autograph-image').src=window.URL.createObjectURL(this.files[0])">
+            <input class="autograph-image-select" name ="photo" type="file" accept="image/*" onchange="document.getElementById('autograph-image').src=window.URL.createObjectURL(this.files[0]);
+                                                                                                        document.getElementById('autograph-image').style.maxHeight='50vh'">
         </figure>
 
         <form class="autograph-data">
@@ -54,9 +55,12 @@
                 <input class="item-input" type="text" id="price" name="price" placeholder="Value"><br>
             </div>
             <div class="item-for-tags" id="item-for-tags"><br>
-                <label for="tags">Enter autograph tag:</label>
-                <input class="item-input" type="text" id="tags" name="tags" placeholder="Tag">
-                <div id ="button_plus" class="button_plus" onclick="add_tag_field()"></div><br>
+                <div class="new-tag" id="new-tag">
+                    <label for="tags">Enter autograph tag:</label>
+                    <input class="item-input" type="text" id="tags" name="tags" placeholder="Tag">
+                    <div id ="button_plus" class="button_plus" onclick="add_tag_field()"></div><br><br>
+                </div>
+
             </div>
             <div class="item">
                 <br><input class="marketplace_checkbox" id="marketplace" type="checkbox" name="marketplace" onclick="get_confirmation_marketplace()">

@@ -32,7 +32,7 @@ span{
 .autograph-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
     font-size: 2vh;
 
