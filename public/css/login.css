@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header,body,ul{
+    background-color: #24252AEF;
+}
+
+li, a, button, p, span, h1, label, .TOS{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #f6f5f5;
+    text-decoration: none;
+}
+
+div {
+    display: block;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+    overflow: hidden;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+section {
+    display: block;
+}
+
+.button_and_logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{
+    width: 12vw;
+}
+
+.site-logo{
+    cursor: pointer;
+}
+
+.menu_button{
+    padding: 1.3vh 1.3vh;
+    font-size: 1vw;
+    background-color: rgb(12, 85, 205);
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.menu_button:hover{
+    background-color: rgb(12, 125, 205);
+}
+
+.container_login{
+    width: 50vh;
+    background: transparent;
+    position: relative;
+}
+
+.login_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_title{
+    text-align: center;
+    font-size: 3.2em;
+    margin-top: 1.5em;
+}
+
+.new_user{
+    color: #f6f5f5;
+    font-weight: 300;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.signup_link a, .forgot_pass a, .TOS a, .new_user a{
+    cursor: pointer;
+    color: rgb(12, 125, 205);
+    text-decoration: none;
+}
+.email_input_container{
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+    border-bottom: 1px solid #f6f5f5;
+    border-radius: 3px;
+    margin-bottom: 1em;
+}
+
+.email_input{
+    color: #f6f5f5;
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: 0 0;
+    height: 62px;
+    padding: 0 20px 0 38px;
+}
+
+.password_input_container{
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+    border-bottom: 1px solid #f6f5f5;
+    border-radius: 3px;
+    margin-bottom: 1em;
+}
+
+.password_input{
+    color: #f6f5f5;
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: 0 0;
+    height: 62px;
+    padding: 0 20px 0 38px;
+}
+
+.options{
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 2em;
+    margin-top: 2em;
+}
+
+.button_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login_button{
+    font-size: 1em;
+    color: #f6f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    border: none;
+    border-radius: 1vh;
+    background: rgb(12, 85, 205);
+    transition: all 0.3s ease 0s;
+}
+
+.login_button:hover{
+    background-color: rgb(12, 125, 205);
+}
+
+.TOS{
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.7em;
+    width: 50vh;
+    line-height: 24px;
+    margin-bottom: 2em;
+}
+@media screen and (max-width: 550px){
+    .menu_bar{
+        font-size: 3vw;
+    }
+    .menu_bar img{
+        width:20vw;
+    }
+    .menu_button{
+        font-size: 3.5vw;
+    }
+    .container_login, .TOS{
+        width: 30vh;
+    }
+}

@@ -1,0 +1,142 @@
+*,html,body{
+    margin:0;
+    padding:0;
+}
+header{
+    padding: 1vh 5vh;
+    background-color: #24252A;
+    position: relative;
+
+}
+.top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-menu .site-logo{
+    cursor: pointer;
+}
+.top-menu img{
+    width:20vh;
+}
+
+.site-logo{
+    cursor: pointer;
+}
+.button_and_logo img{
+    width: 12vw;
+}
+
+.menu_bar .menu{
+    list-style: none;
+    margin-right: 5rem;
+    margin-left: 4rem;
+}
+.menu_bar .menu li{
+    display: inline-block;
+    padding: 0 0.6vh;
+
+}
+h6{
+    display: inline;
+}
+
+ul.menu {
+    list-style-type: none;
+}
+.menu li a{
+    transition: all 0.3s ease 0s;
+}
+.menu li a:hover{
+    color: #0c7dcd;
+}
+
+.menu_button{
+    padding: 1vh 1vh;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    background-color: rgb(12, 85, 205);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.menu_button:hover{
+    background-color: rgb(12, 125, 205);
+}
+.profile-menu{
+    display: none;
+    border: 1px solid white;
+    border-radius: 32px;
+    background-color:#24252A;
+    opacity: 0.9;
+    position: absolute;
+    top:9.5vh;
+    right: 1em;
+    font-size: 2vh;
+    z-index: 1;
+
+
+}
+.profile-menu .profile:after{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 85%;
+    margin-left: -15px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+
+
+}
+.profile-menu .profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 5px 10px 5px 20px;
+    list-style-type: none;
+    max-width: 30vh;
+
+}
+ul.profile-picture-menu {
+    list-style-type: none;
+}
+.profile-menu li a{
+    transition: all 0.3s ease 0s;
+}
+.profile-menu li a:hover{
+    color: #0c7dcd;
+}
+
+.menu_bar .profile-picture{
+    background-image: url("../images/profile-picture.gif");
+    padding: 3.7vh 3.7vh;
+    background-size: cover;
+    border:none;
+    border-radius: 60px;
+    cursor: pointer;
+}
+.menu_bar .profile-picture:focus{
+    outline: none;
+    box-shadow: none;
+}
+.invalid-feedback{
+    color: #e50425;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+@media screen and (max-width: 550px){
+
+    .menu_bar img{
+        width:20vh;
+    }
+    .menu_bar .menu{
+        margin-left:1rem;
+        margin-right: 1rem;
+    }
+
+}

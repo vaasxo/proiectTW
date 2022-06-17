@@ -1,0 +1,35 @@
+{
+    "name": "ondina/backend",
+    "autoload": {
+        "psr-4": {
+            "": "./"
+        },
+        "classmap": [
+            "core/Application.php",
+            "core/Router.php",
+            "core/Request.php",
+            "core/Response.php",
+            "core/Controller.php",
+            "core/Database.php",
+            "core/DBModel.php",
+            "models/Workout.php",
+            "core/WorkoutModel.php",
+            "migrations/m0001_initial.php",
+            "migrations/m0002_add_password.php",
+            "controllers/SiteController.php",
+            "controllers/AuthController.php"
+        ],
+        "authors": [
+            {
+                "name": "Ondina",
+                "email": "ondina_patricia@yahoo.com"
+            }
+        ],
+        "require": {}
+    },
+    "require": {
+      "ext-pdo": "*",
+      "ext-mysqli": "*",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
