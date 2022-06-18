@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button, p, span, h1, body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+}
+body{
+    background-color: #24252AEF;
+}
+
+.autograph-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 1em;
+}
+.autograph-image{
+    max-height: 70vh;
+    border: 2px solid white;
+    border-radius: 16px;
+}
+.autograph-data{
+    margin-left: 1em;
+    margin-top: 1em;
+    background-color: rgba(31, 34, 44, 0.94);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 16px;
+}
+.autograph-data .item{
+    margin-left: 2em;
+    margin-right: 2em;
+    align-self: flex-start;
+
+}
+.item-input{
+    color: #f6f5f5;
+    background: 0 0;
+    line-height: 1.2;
+    border: 0px;
+}
+.item-input:focus{
+    outline: none;
+}
+.item label{
+    text-align: left;
+}
+.tags{
+    margin-left: 1em;
+}
+.flex-list{
+    position: relative;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow:hidden;
+}
+.flex-list ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.flex-list li{
+    flex-grow: 1;
+    margin: .25em 0;
+    padding: 0 1em;
+    text-align: center;
+}
+.flex-list li:hover{
+    color: #0c7dcd;
+    margin: .25em .1em;
+}
+.button_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.save_button, .bid_button, .trade_button{
+    margin:1em;
+    font-size: 1em;
+    color: #f6f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2rem;
+    border: none;
+    border-radius: 1vh;
+    background: rgb(12, 85, 205);
+}
+.save_button:hover, .bid_button:hover, .trade_button:hover{
+    background-color: rgb(12, 125, 205);
+}
+@media screen and (max-width: 800px){
+    .autograph-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .autograph-image{
+        max-height: 100vh;
+    }
+}

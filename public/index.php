@@ -27,14 +27,15 @@ $app->router->get('/register', [controllers\AuthController::class,'register']);
 $app->router->post('/register', [controllers\AuthController::class,'register']);
 $app->router->get('/user', 'user');
 
-//Routes to be added
 $app->router->get('/dashboard', 'dashboard');
 $app->router->get('/faq', 'faq');
 $app->router->get('/reset_password', 'forgotPass');
+$app->router->get('/pass_reset_confirmation', 'passResetConfirmation');
 $app->router->get('/market', 'market');
 $app->router->get('/news', 'news');
 $app->router->get('/notifications', 'notifications');
 $app->router->get('/upload', 'upload');
+$app->router->get('/autograph', 'autograph');
 
 
 

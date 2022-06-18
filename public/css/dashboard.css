@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button, p, span, h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+}
+body{
+    background-color: #24252AEF;
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+}
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+span{
+    margin-top:2rem;
+    margin-bottom: 1rem;
+    align-self: center;
+    font-size: 2em;
+}
+.autograph-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 2vh;
+
+}
+.autograph{
+    background-color: #24252A;
+    border-radius: 16px;
+    margin: 1rem;
+    width: 30vw;
+    height: 40vh;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+}
+.autograph__link p{
+    font-size: 1em;
+}
+
+.autograph__link:hover p{
+    color: #0c7dcd;
+    align-self: flex-end;
+}
+.autograph:hover .autograph__image{
+    opacity: 0.5;
+}
+.autograph .autograph__image{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width:30vw;
+    height: 25vh;
+    object-fit: cover;
+}
+.autograph h2{
+    color:ivory;
+}
+@media screen and (max-width: 550px){
+    .main .button{
+        font-size: 3vw;
+        align-self: center;
+        margin-left:25%;
+    }
+    .main{
+        height: 120vh;
+    }
+}
