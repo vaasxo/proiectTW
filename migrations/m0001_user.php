@@ -2,7 +2,7 @@
 
 use core\Application;
 
-class m0001_initial{
+class m0001_user{
     public function up()
     {
         $db= Application::$app->db;
@@ -17,9 +17,6 @@ class m0001_initial{
                 birth_year INT,
                 gender VARCHAR(255),
                 height INT,
-                achievements VARCHAR(255),
-                workouts_completed INT,
-                workout_streak INT, 
                 status INT
 )ENGINE=INNODB";
         $db->pdo->exec($SQL);

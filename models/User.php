@@ -14,7 +14,6 @@ class User extends UserModel
     public string $password='';
     public string $confirmPass='';
     public int $status;
-    public array $workouts=[];
 
     public function getTableName(): string
     {
