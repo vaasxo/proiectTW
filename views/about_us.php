@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\View;
+
 $this->title='About Us | Fitter';?>
-<style type="text/css">
+<style>
     <?php include '../public/css/aboutUs.css'?>
     <?php include '../public/css/header.css'?>
     <?php include '../public/css/footer.css'?>
@@ -66,4 +68,3 @@ $this->title='About Us | Fitter';?>
 </main>
 
 </body>
-</html>

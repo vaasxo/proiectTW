@@ -3,16 +3,17 @@
 /** @var $model User */
 
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
 $this->title = 'Register | Fitter';
 
 use core\form\Section;
+use core\View;
 use models\User;
 
 ?>
-<style type="text/css">
+<style>
     <?php include '../public/css/register.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -23,7 +24,7 @@ use models\User;
         <h1 class="register_title"> Create Your Signature Account</h1>
         <div class="old_user">
             <span>Already have an account?</span>
-            <a href="/loginl" class="signin_link">Sign In</a>
+            <a href="/login" class="signin_link">Sign In</a>
         </div>
         <div class="container_register">
             <?php echo $form->field($model, 'email') ?>
@@ -45,4 +46,3 @@ use models\User;
 </main>
 <script><?php require_once("layouts/load_footer.js");?></script>
 </body>
-</html>

@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\View;
+
 $this->title='Dashboard | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/dashboard.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>

@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\View;
+
 $this->title='Contact | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/contact.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -39,7 +41,7 @@ $this->title='Contact | Signature'?>
             </section>
 
             <section class="button_container">
-                <a href="homepage.html" class="submit_button" onclick="alert('Thanks for reaching us! We are looking into the issue and will have an answer for you shortly.')">
+                <a href="/homepage" class="submit_button" onclick="alert('Thanks for reaching us! We are looking into the issue and will have an answer for you shortly.')">
                     Submit
                 </a>
             </section>
@@ -49,6 +51,3 @@ $this->title='Contact | Signature'?>
 <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-
-</html>
-

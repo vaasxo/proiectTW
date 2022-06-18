@@ -3,15 +3,16 @@
 /** @var $model User */
 
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
 $this->title = 'Login | Signature';
 use core\form\Section;
+use core\View;
 use models\User;
 
 ?>
-<style type="text/css">
+<style>
     <?php include '../public/css/login.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -54,9 +55,7 @@ use models\User;
           You also acknowledge that Signature uses cookies to give the best user experience.
         </section>
       </div>
-  <?php \core\form\Section::end()?>
+  <?php Section::end()?>
 </main>
 <script><?php require_once("layouts/load_footer.js");?></script>
 </body>
-
-</html>

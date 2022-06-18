@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\View;
+
 $this->title='Password Reset | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/passResetConfirmation.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -21,6 +23,3 @@ $this->title='Password Reset | Signature'?>
 <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-
-</html>
-

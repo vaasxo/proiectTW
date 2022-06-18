@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
-$this->title='Upload | Signature'?>
-<style type="text/css">
+use core\View;
+
+$this->title = 'Upload | Signature' ?>
+<style>
     <?php include '../public/css/upload.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -13,13 +15,14 @@ $this->title='Upload | Signature'?>
 <main>
     <div class="autograph-container">
         <figure class="autograph-image-container">
-            <img id="autograph-image" class="autograph-image" src="../images/upload.png" alt="Image failed loading" >
-            <input class="autograph-image-select" name ="photo" type="file" accept="image/*" onchange="document.getElementById('autograph-image').src=window.URL.createObjectURL(this.files[0]);
+            <img id="autograph-image" class="autograph-image" src="images/upload.png" alt="Image failed loading">
+            <input class="autograph-image-select" name="photo" type="file" accept="image/*" onchange="document.getElementById('autograph-image').src=window.URL.createObjectURL(this.files[0]);
                                                                                                         document.getElementById('autograph-image').style.maxHeight='50vh'">
         </figure>
 
         <form class="autograph-data">
-            <br><p>Add new autograph to your dashboard:</p>
+            <br>
+            <p>Add new autograph to your dashboard:</p>
             <div class="item">
                 <br><br><label for="personality">Obtained from personality:</label>
                 <input class="item-input" type="text" id="personality" name="personality" placeholder="Personality"><br>
@@ -57,30 +60,26 @@ $this->title='Upload | Signature'?>
                 <div class="new-tag" id="new-tag">
                     <label for="tags">Enter autograph tag:</label>
                     <input class="item-input" type="text" id="tags" name="tags" placeholder="Tag">
-                    <div id ="button_plus" class="button_plus" onclick="add_tag_field()"></div><br><br>
+                    <div id="button_plus" class="button_plus" onclick="add_tag_field()"></div>
+                    <br><br>
                 </div>
 
             </div>
             <div class="item">
-                <br><input class="marketplace_checkbox" id="marketplace" type="checkbox" name="marketplace" onclick="get_confirmation_marketplace()">
+                <br><input class="marketplace_checkbox" id="marketplace" type="checkbox" name="marketplace"
+                           onclick="get_confirmation_marketplace()">
                 <label class="marketplace" for="marketplace">
                     Add to Marketplace
                 </label>
             </div>
             <section class="button_container">
-                <button type="submit" class="upload_button">
+                <a href="/autograph" class="upload_button" onclick="alert('Autograph added to your dashboard')">
                     Upload
-                </button>
+                </a>
             </section>
-
         </form>
-
     </div>
 </main>
-<script><?php require_once("layouts/load_footer.js");?></script>
+<script><?php require_once("layouts/load_footer.js"); ?></script>
 
 </body>
-
-</html>
-
-

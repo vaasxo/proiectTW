@@ -1,10 +1,13 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\Application;
+use core\View;
+
 $this->title='Home | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/homepage.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -20,12 +23,8 @@ $this->title='Home | Signature'?>
                     <span class="hero_overlay_subtitle"> Store, Trade and Get Top-Tier Appraisals on <span class="your">Your</span> Autographs
                 </span>
                     <div>
-                        <?php if (\core\Application::isGuest()):?>
+                        <?php if (Application::isGuest()):?>
                             <a href="/register" class="get_started">
-                                Get Started
-                            </a>
-                        <?php else: ?>
-                            <a href="/workout-generator" class="get_started">
                                 Get Started
                             </a>
                         <?php endif?>
@@ -93,6 +92,3 @@ $this->title='Home | Signature'?>
     <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-
-</html>
-

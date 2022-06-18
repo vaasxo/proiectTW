@@ -26,7 +26,7 @@
                         <a href="/faq">FAQ</a>
                     </li>
                     <li role="menuitem">
-                        <a href="/about-us">About Us</a>
+                        <a href="/about_us">About Us</a>
                     </li>
                     <li role="menuitem">
                         <a href="/contact">Contact</a>

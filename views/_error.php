@@ -1,15 +1,18 @@
 <?php
-/** @var $exception \Exception */
+/** @var $exception Exception */
 
 /**
- * @var $this \core\View
+ * @var $this View
  */
+
+use core\View;
+
 if($exception->getCode()===404)
     $this->title = 'Page not found';
 else
     $this->title = 'No permission';
 ?>
-<style type="text/css">
+<style>
     <?php include '../public/css/header.css'?>
     <?php include '../public/css/error.css'?>
     <?php include '../public/css/footer.css'?>
@@ -20,4 +23,3 @@ else
     </main>
     <script><?php require_once("layouts/load_footer.js");?></script>
 </body>
-</html>

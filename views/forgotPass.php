@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\View;
+
 $this->title='Forgot Password | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/forgotPass.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -33,6 +35,4 @@ $this->title='Forgot Password | Signature'?>
 <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-
-</html>
 

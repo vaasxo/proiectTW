@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\View;
+
 $this->title='Template | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/template.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -17,6 +19,3 @@ $this->title='Template | Signature'?>
 <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-
-</html>
-

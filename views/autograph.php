@@ -1,10 +1,12 @@
 <?php
 /**
- * @var $this \core\View
+ * @var $this View
  */
 
+use core\View;
+
 $this->title='Autograph | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/autograph.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -73,7 +75,7 @@ $this->title='Autograph | Signature'?>
                 </ul>
             </div>
             <section class="button_container">
-                <a href=",dashboard" class="save_button" onclick="alert('Modifications saved successfully.')">
+                <a href="/dashboard" class="save_button" onclick="alert('Modifications saved successfully.')">
                     Save
                 </a>
             </section>
@@ -83,6 +85,3 @@ $this->title='Autograph | Signature'?>
 <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-
-</html>
-
