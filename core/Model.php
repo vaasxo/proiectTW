@@ -12,6 +12,7 @@ abstract class Model
     public const RULE_MAX = 'max';
     public const RULE_MATCH = 'match';
     public const RULE_UNIQUE = 'unique';
+    public const RULE_INT = 'int';
 
     public function loadData($data)
     {
@@ -29,7 +30,6 @@ abstract class Model
 
     public function validate(): bool
     {
-        echo 'here';
         foreach ($this->rules() as $attribute => $rules) {
             $value = $this->{$attribute};
             foreach ($rules as $rule) {
@@ -52,6 +52,9 @@ abstract class Model
                 }
                 if ($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) {
                     $this->addErrorForRule($attribute, self::RULE_MATCH, $rule);
+                }
+                if($ruleName === self::RULE_INT && !is_numeric($value) && $value !=NULL){
+                    $this->addErrorForRule($attribute, self::RULE_INT);
                 }
                 if ($ruleName === self::RULE_UNIQUE) {
                     $className = $rule['class'];
@@ -93,7 +96,8 @@ abstract class Model
             self::RULE_MIN => 'Minimum password length must be {min}',
             self::RULE_MAX => 'Maximum password length must be {max}',
             self::RULE_MATCH => 'The two passwords must match',
-            self::RULE_UNIQUE => 'Email already in use'
+            self::RULE_UNIQUE => 'Email already in use',
+            self::RULE_INT => 'Only numbers allowed here'
         ];
     }
 

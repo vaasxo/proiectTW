@@ -26,7 +26,7 @@ class SiteController extends Controller
         if($request->isPost()){
             $autographForm->loadData($request->getBody());
             if ($autographForm->validate()){
-                $request->redirect('/autograph');
+                $response->redirect('/autograph');
                 return 'ok';
             }
         }

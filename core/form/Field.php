@@ -42,7 +42,9 @@ class Field
             $this->attribute,
             $this->type,
             $this->attribute,
-            ($this->attribute==='email')?'Email Address':(($this->attribute==='password')?'Password':'Confirm Password'),
+            ($this->attribute==='email')?'Email Address':
+                (($this->attribute==='password')?'Password':
+                    (($this->attribute==='confirmPass')?'Confirm Password':'')),
             $this->model->getFirstError($this->attribute)
         );
     }
