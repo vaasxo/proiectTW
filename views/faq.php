@@ -11,7 +11,7 @@ $this->title='FAQ | Signature'?>
 </style>
 <body>
 <main>
-    <section>
+    <section class="accordion_container_section">
         <div class="accordion_container">
             <div class="accordion">
                 <div class="accordion_item" id="question1">

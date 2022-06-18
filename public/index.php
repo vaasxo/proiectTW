@@ -13,16 +13,15 @@ $config = [
 $app = new core\Application(dirname(__DIR__), $config);
 $app->router->get('/', 'homepage');
 $app->router->get('/homepage', 'homepage');
-$app->router->get('/aboutUs', 'about_us');
+$app->router->get('/about-us', 'about_us');
 $app->router->get('/contact', 'contact');
 $app->router->get('/EmailConfirmation', 'email_confirmation');
 $app->router->get('/template', 'template');
 
-$app->router->get('/logout', [controllers\AuthController::class,'logout']);
-
 
 $app->router->get('/login', [controllers\AuthController::class,'login']);
 $app->router->post('/login', [controllers\AuthController::class,'login']);
+$app->router->get('/logout', [controllers\AuthController::class,'logout']);
 $app->router->get('/register', [controllers\AuthController::class,'register']);
 $app->router->post('/register', [controllers\AuthController::class,'register']);
 $app->router->get('/user', 'user');

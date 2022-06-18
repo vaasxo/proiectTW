@@ -28,7 +28,7 @@ body{
 }
 
 
-section{
+.accordion_container_section{
     width: 100%;
     height: 100vh;
     background-color: #24252A;

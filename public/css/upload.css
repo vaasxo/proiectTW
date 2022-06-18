@@ -150,3 +150,155 @@ p{
         margin-bottom: 5rem;
     }
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button, p, span, h1, body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+}
+body{
+    background-color: #24252AEF;
+}
+
+.autograph-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 1em;
+}
+.autograph-image{
+    max-height: 20vh;
+    border-radius: 16px;
+    margin-top: 2rem;
+}
+.autograph-image-select{
+    cursor: pointer;
+    margin: 1rem;
+}
+
+
+.autograph-data{
+    margin-left: 1em;
+    margin-top: 1em;
+    background-color: rgba(31, 34, 44, 0.94);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 16px;
+}
+p{
+    align-self: center;
+}
+.autograph-data .item, .item-for-tags{
+    margin-left: 2em;
+    margin-right: 2em;
+    align-self: flex-end;
+
+}
+.item-input{
+    color: #f6f5f5;
+    background: 0 0;
+    line-height: 1.2;
+    text-align: center;
+    border-radius: 30px;
+    border: 1px solid #8194f1;
+}
+.item-input:focus{
+    outline: none;
+}
+.item-for-tags{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.button_plus {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    border: 2px solid #095776;
+    left: 70%;
+    margin-top: 0.5rem;
+}
+
+.button_plus:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 4px;
+    width: 50%;
+    background: #095776;
+    top: 50%;
+    left: 50%;
+}
+
+.button_plus:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #095776;
+    height: 50%;
+    width: 4px;
+}
+
+.button_plus:hover:before,
+.button_plus:hover:after {
+    background: #fff;
+    transition: 0.2s;
+}
+
+.button_plus:hover {
+    background-color: #095776;
+    transition: 0.2s;
+}
+
+.button_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upload_button{
+    margin:1em;
+    font-size: 1em;
+    color: #f6f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2rem;
+    border: none;
+    border-radius: 1vh;
+    background: rgb(12, 85, 205);
+}
+.upload_button:hover{
+    background-color: rgb(12, 125, 205);
+}
+@media screen and (max-width: 800px){
+    .autograph-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+    figure{
+        max-width: 50vh;
+        max-height: 50vh;
+        align-self: center;
+        margin-bottom: 5rem;
+    }
+}

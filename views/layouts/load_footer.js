@@ -4,12 +4,12 @@ document.write('' +
     '        <div class="footer">\n' +
     '            <div class="footer-heading footer-1">\n' +
     '                <h1>Discover Signature</h1>\n' +
-    '                <a href="aboutUs.html">About us</a>\n' +
+    '                <a href="/about-us">About us</a>\n' +
     '                <a href="#">Newsletter</a>\n' +
-    '                <a href="contact.html">Careers</a>\n' +
-    '                <a href="register.html">Sign Up</a>\n' +
-    '                <a href="faq.html">FAQ</a>\n' +
-    '                <a href="contact.html">Support</a>\n' +
+    '                <a href="/contact">Careers</a>\n' +
+    '                <a href="/register">Sign Up</a>\n' +
+    '                <a href="/faq">FAQ</a>\n' +
+    '                <a href="/contact">Support</a>\n' +
     '            </div>\n' +
     '            <div class="footer-heading footer-2">\n' +
     '                <h1>Legal</h1>\n' +
