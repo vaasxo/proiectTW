@@ -15,37 +15,25 @@ if ($db->connect_error) {
 // Fetch records from database
 $query = $db->query("SELECT id, personality, field, context, location, object, mentions, measures, estimated_value FROM autographs");
 
-header("Content-type: text/xml");
+header( "Content-type: text/xml");
 
 echo "<?xml version='1.0' encoding='UTF-8'?>
  <rss version='2.0'>
  <channel>
- <title>Signature | RSS</title>
- <link>https://www.signature.com/</link>
+ <title>w3schools.in | RSS</title>
+ <link>https://www.w3schools.in/</link>
  <description>Cloud RSS</description>
  <language>en-us</language>";
 
-while ($row = mysqli_fetch_array($query)) {
-    $id = $row["id"];
-    $personality = $row["personality"];
-    $field = $row["field"];
-    $context = $row["context"];
-    $location = $row["location"];
-    $object = $row["object"];
-    $mentions = $row["mentions"];
-    $measures = $row["measures"];
-    $estimated_value = $row["estimated_value"];
+while($row = mysqli_fetch_array($query)){
+    $title=$row["title"];
+    $link=$row["link"];
+    $description=$row["description"];
 
     echo "<item>
-   <id>$id</id>
-   <personality>$personality</personality>
-   <field>$field</field>
-   <context>$context</context>
-   <location>$location</location>
-   <object>$object</object>
-   <mentions>$mentions</mentions>
-   <measures>$measures</measures>
-   <estimated_value>$estimated_value</estimated_value>
+   <title>$title</title>
+   <link>$link</link>
+   <description>$description</description>
    </item>";
 }
 echo "</channel></rss>";
