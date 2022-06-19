@@ -16,7 +16,10 @@ li, a, button, p, span, h1, body{
 body{
     background-color: #24252AEF;
 }
-
+.autograph-image-container{
+    display: flex;
+    flex-direction: column;
+}
 .autograph-container{
     display: flex;
     justify-content: space-evenly;
@@ -26,7 +29,7 @@ body{
 .autograph-image{
     max-height: 20vh;
     border-radius: 16px;
-    margin-top: 2rem;
+    margin: 2rem;
 }
 .autograph-image-select{
     cursor: pointer;
@@ -68,7 +71,9 @@ body{
 [class$='_input']:focus{
     outline: none;
 }
-
+.checkbox-item{
+    margin:1em;
+}
 
 .button_plus {
     position: relative;

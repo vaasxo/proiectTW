@@ -3,7 +3,6 @@
 
 namespace models;
 
-
 use core\Model;
 
 class AutographForm extends Model
@@ -15,6 +14,7 @@ class AutographForm extends Model
     public string $object='';
     public string $tag='';
     public string $price='';
+    public string $image='';
 
     public function rules():array
     {

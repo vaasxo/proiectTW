@@ -26,6 +26,16 @@ class SiteController extends Controller
         if($request->isPost()){
             $autographForm->loadData($request->getBody());
             if ($autographForm->validate()){
+                Application::$app->db->insert("autographs", $request->getBody());
+                $tmpFile = $_FILES['image']['tmp_name'];
+                $newFile = 'uploaded_images/'.$_FILES['image']['name'];
+                $result = move_uploaded_file($tmpFile, $newFile);
+                echo $_FILES['image']['name'];
+                if ($result) {
+                    echo ' was uploaded<br />';
+                } else {
+                    echo ' failed to upload<br />';
+                }
                 $response->redirect('/autograph');
                 return 'ok';
             }

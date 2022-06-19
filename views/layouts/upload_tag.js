@@ -12,11 +12,10 @@ function add_tag_field(){
     label.textContent = "Enter another tag:"
     new_tag_container.appendChild(label)
     let input = document.createElement("input")
-    input.className = "item-input"
+    input.className = "item_input"
     input.type = "text"
     input.id = "tags"
     input.name = "tags"
-    input.placeholder="Tag"
     new_tag_container.appendChild(input)
     console.log("input added")
     new_tag_container.appendChild(button)

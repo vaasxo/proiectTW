@@ -5,9 +5,9 @@
 
 use core\View;
 
-$this->title='Template | Signature'?>
+$this->title='Confirm Email | Signature'?>
 <style>
-    <?php include '../public/css/template.css'; ?>
+    <?php include '../public/css/email_confirmation.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
 </style>

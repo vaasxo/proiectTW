@@ -26,7 +26,7 @@ class Database
         }
 
     }
-    public function applyMigrations()
+    public function applyMigrations(): void
     {
         $this->createMigrationTable();
         $appliedMigrations=$this->getAppliedMigrations();
@@ -57,7 +57,7 @@ class Database
             $this->log("All migrations are applied");
         }
     }
-    public function createMigrationTable()
+    public function createMigrationTable(): void
     {
         $this->pdo->exec("CREATE TABLE IF NOT EXISTS migrations(
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -73,11 +73,26 @@ class Database
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_COLUMN);
     }
-    public function saveMigrations(array $migrations){
+    public function saveMigrations(array $migrations): void
+    {
         $str=implode(",",array_map(fn($m)=>"('$m')",$migrations));
-        $statement=$this->pdo->prepare("INSERT INTO migrations (migration) VALUES
-            $str
-            ") ;
+        $statement=$this->pdo->prepare("INSERT INTO migrations (migration) VALUES $str");
+        $statement->execute();
+    }
+    public function insert(string $table_name, array $input): void
+    {
+        $SQL_fields ='';
+        $SQL_values='';
+        foreach($input as $key=>$value)
+            if($value!='' && $key!='tag'){
+                $SQL_fields .= $key.', ';
+                $SQL_values .= "'".$value."', ";
+            }
+        $SQL_fields=substr($SQL_fields,0,-2);
+        $SQL_values=substr($SQL_values,0,-2);
+        $SQL = "INSERT INTO $table_name ($SQL_fields) VALUES($SQL_values)";
+        echo $SQL;
+        $statement=$this->pdo->prepare($SQL);
         $statement->execute();
     }
 
@@ -85,7 +100,8 @@ class Database
     {
         return $this->pdo->prepare($sql);
     }
-    protected function log($message){
+    protected function log($message): void
+    {
         echo '['.date('Y-m-d H:i:s').'] - '.$message.PHP_EOL;
     }
 }
