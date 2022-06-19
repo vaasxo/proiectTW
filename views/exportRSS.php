@@ -1,34 +1,51 @@
 <?php
-// Create connection
-$con=mysqli_connect("example.com","alex","qwerty");
+$dbHost = "localhost";
+$dbUsername = "root";
+$dbPassword = "root";
+$dbName = "proiecttw";
+
+// Create database connection
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
 // Check connection
-if (mysqli_connect_errno($con)) {
-    echo "Database connection failed!: " . mysqli_connect_error();
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
 }
 
-$sql = "SELECT * FROM rss_info ORDER BY id DESC LIMIT 20";
-$query = mysqli_query($con,$sql);
+// Fetch records from database
+$query = $db->query("SELECT id, personality, field, context, location, object, mentions, measures, estimated_value FROM autographs");
 
-header( "Content-type: text/xml");
+header("Content-type: text/xml");
 
 echo "<?xml version='1.0' encoding='UTF-8'?>
  <rss version='2.0'>
  <channel>
- <title>w3schools.in | RSS</title>
- <link>https://www.w3schools.in/</link>
+ <title>Signature | RSS</title>
+ <link>https://www.signature.com/</link>
  <description>Cloud RSS</description>
  <language>en-us</language>";
 
-while($row = mysqli_fetch_array($con,$query)){
-    $title=$row["title"];
-    $link=$row["link"];
-    $description=$row["description"];
+while ($row = mysqli_fetch_array($query)) {
+    $id = $row["id"];
+    $personality = $row["personality"];
+    $field = $row["field"];
+    $context = $row["context"];
+    $location = $row["location"];
+    $object = $row["object"];
+    $mentions = $row["mentions"];
+    $measures = $row["measures"];
+    $estimated_value = $row["estimated_value"];
 
     echo "<item>
-   <title>$title</title>
-   <link>$link</link>
-   <description>$description</description>
+   <id>$id</id>
+   <personality>$personality</personality>
+   <field>$field</field>
+   <context>$context</context>
+   <location>$location</location>
+   <object>$object</object>
+   <mentions>$mentions</mentions>
+   <measures>$measures</measures>
+   <estimated_value>$estimated_value</estimated_value>
    </item>";
 }
 echo "</channel></rss>";
-?>

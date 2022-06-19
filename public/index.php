@@ -36,6 +36,8 @@ $app->router->get('/faq', 'faq');
 $app->router->get('/reset_password', 'forgotPass');
 $app->router->get('/pass_reset_confirmation', 'passResetConfirmation');
 $app->router->get('/market', 'market');
+$app->router->get('/exportCSV', 'exportCSV');
+$app->router->get('/exportRSS', 'exportRSS');
 $app->router->get('/news', 'news');
 $app->router->get('/notifications', 'notifications');
 $app->router->get('/autograph', 'autograph');

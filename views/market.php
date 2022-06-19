@@ -80,8 +80,8 @@ $this->title='Marketplace | Signature'?>
         </div>
 
         <a class="button-afisare" href="#">Apply</a>
-        <a class="button-afisare" href="exportCSV.php" id="exportCSV">Export to CSV</a>
-        <a class="button-afisare" href="exportRSS.php" id="exportRSS">Export to RSS feed</a>
+        <a class="button-afisare" href="/exportCSV" id="exportCSV">Export to CSV</a>
+        <a class="button-afisare" href="/exportRSS" id="exportRSS">Export to RSS feed</a>
 
     </div>
     <div class="autograph-container">
@@ -149,6 +149,3 @@ $this->title='Marketplace | Signature'?>
 <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-
-</html>
-

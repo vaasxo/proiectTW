@@ -1,12 +1,21 @@
 <?php
+$dbHost     = "localhost";
+$dbUsername = "root";
+$dbPassword = "root";
+$dbName     = "proiecttw";
 
-// Load the database configuration file
-include_once 'dbConfig.php';
+// Create database connection
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+// Check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
 
 // Fetch records from database
-$query = $db->query("SELECT * FROM members ORDER BY id ASC");
+$query = $db->query("SELECT id, personality, field, context, location, object, mentions, measures, estimated_value FROM autographs");
 
-if($query->num_rows > 0){
+if ($query->num_rows > 0) {
     $delimiter = ",";
     $filename = "members-data_" . date('Y-m-d') . ".csv";
 
@@ -14,13 +23,12 @@ if($query->num_rows > 0){
     $f = fopen('php://memory', 'w');
 
     // Set column headers
-    $fields = array('ID', 'FIRST NAME', 'LAST NAME', 'EMAIL', 'GENDER', 'COUNTRY', 'CREATED', 'STATUS');
+    $fields = array('ID', 'PERSONALITY', 'FIELD', 'CONTEXT', 'LOCATION', 'OBJECT', 'MENTIONS', 'MEASURES', 'ESTIMATED_VALUE');
     fputcsv($f, $fields, $delimiter);
 
     // Output each row of the data, format line as csv and write to file pointer
-    while($row = $query->fetch_assoc()){
-        $status = ($row['status'] == 1)?'Active':'Inactive';
-        $lineData = array($row['id'], $row['first_name'], $row['last_name'], $row['email'], $row['gender'], $row['country'], $row['created'], $status);
+    while ($row = $query->fetch_assoc()) {
+        $lineData = array($row['id'], $row['personality'], $row['field'], $row['context'], $row['location'], $row['object'], $row['mentions'], $row['measures'], $row['estimated_value']);
         fputcsv($f, $lineData, $delimiter);
     }
 
@@ -35,5 +43,3 @@ if($query->num_rows > 0){
     fpassthru($f);
 }
 exit;
-
-?>

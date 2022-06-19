@@ -12,12 +12,9 @@ class m0001_user{
                 username VARCHAR(255),
                 firstname VARCHAR(255),
                 lastname VARCHAR(255),
-                age INT,
-                weight INT,
-                birth_year INT,
-                gender VARCHAR(255),
-                height INT,
-                status INT
+                status INT,
+                vkey VARCHAR(255) NOT NULL
+                
 )ENGINE=INNODB";
         $db->pdo->exec($SQL);
     }
