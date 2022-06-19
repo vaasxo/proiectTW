@@ -37,7 +37,7 @@ class Application
         $this->controller = $controller;
     }
 
-    public function __construct($rootPath, array $config)
+    public function __construct($rootPath)
     {
         $this->userClass = new User();
         $this->autographClass = new Autograph();
@@ -51,8 +51,7 @@ class Application
         $this->session = new Session();
         $this->view=new View();
 
-        $this->db = new Database($config['db']);
-
+        $this->db = new Database();
         $primaryValue = $this->session->get('user');
         if($primaryValue){
             $primaryKey = $this->userClass->getPrimaryKey();

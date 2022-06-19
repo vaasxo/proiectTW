@@ -2,7 +2,9 @@
 
 namespace models;
 
-class Autograph
+use core\DBModel;
+
+class Autograph extends DBModel
 {
     public string $personality='';
     public string $field='';

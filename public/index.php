@@ -1,16 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
-$dotenv->load();
-$config = [
-    'db' => [
-        'dsn' =>$_ENV['DB_DSN'],
-        'user' => $_ENV['DB_USER'],
-        'password' => $_ENV['DB_PASSWORD']
-    ]
-];
-$app = new core\Application(dirname(__DIR__), $config);
+
+$app = new core\Application(dirname(__DIR__));
 $app->router->get('/', 'homepage');
 $app->router->get('/homepage', 'homepage');
 $app->router->get('/about_us', 'about_us');
@@ -40,7 +32,7 @@ $app->router->get('/exportCSV', 'exportCSV');
 $app->router->get('/exportRSS', 'exportRSS');
 $app->router->get('/news', 'news');
 $app->router->get('/notifications', 'notifications');
-$app->router->get('/autograph', 'autograph');
+
 
 
 

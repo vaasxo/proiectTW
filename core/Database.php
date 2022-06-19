@@ -6,6 +6,7 @@ namespace core;
 use core\Application;
 use PDO;
 use PDOException;
+require_once __DIR__. '/../vendor/autoload.php';
 
 class Database
 {
@@ -13,11 +14,10 @@ class Database
     /**
      * Database constructor.
      */
-    public function __construct(array $config)
+    public function __construct()
     {
-
         try {
-            $this->pdo= new PDO($config['dsn'], $config['user'], $config['password']);
+            $this->pdo= new PDO('mysql:host=localhost;dbname=proiecttw', 'root', 'root');
             // set the PDO error mode to exception
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //echo "Connected successfully\n";
@@ -91,9 +91,26 @@ class Database
         $SQL_fields=substr($SQL_fields,0,-2);
         $SQL_values=substr($SQL_values,0,-2);
         $SQL = "INSERT INTO $table_name ($SQL_fields) VALUES($SQL_values)";
-        echo $SQL;
+//        echo $SQL;
         $statement=$this->pdo->prepare($SQL);
         $statement->execute();
+    }
+    public function select($table_name,$input,$row_name)
+    {
+
+        $SQL_after_where='';
+        foreach($input as $key=>$value)
+            if($value!='' && $key!='tag'){
+                $SQL_after_where .= $key." = '".$value."' AND ";
+            }
+        $SQL_after_where=substr($SQL_after_where,0,-5);
+        $SQL = "SELECT $row_name FROM $table_name WHERE $SQL_after_where";
+//        echo $SQL;
+        $statement=$this->pdo->query($SQL);
+        while($row = $statement->fetch()) {
+            return $row;
+        }
+        return null;
     }
 
     public function prepare($sql): \PDOStatement

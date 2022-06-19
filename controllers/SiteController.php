@@ -17,26 +17,27 @@ class SiteController extends Controller
 {
     public function __construct()
     {
-        $this->registerMiddleware(new AuthMiddleware(['generateWorkout']));
+        $this->registerMiddleware(new AuthMiddleware(['uploadAutograph']));
 
     }
     public function uploadAutograph(Request $request, Response $response)
     {
         $autographForm = new AutographForm();
         if($request->isPost()){
-            $autographForm->loadData($request->getBody());
+            $input_array=$request->getBody();
+            $autographForm->loadData($input_array);
             if ($autographForm->validate()){
-                Application::$app->db->insert("autographs", $request->getBody());
+                //add uploaded image to local folder and db
+                $input_array['image']=$_FILES['image']['name'];
                 $tmpFile = $_FILES['image']['tmp_name'];
                 $newFile = 'uploaded_images/'.$_FILES['image']['name'];
                 $result = move_uploaded_file($tmpFile, $newFile);
-                echo $_FILES['image']['name'];
-                if ($result) {
-                    echo ' was uploaded<br />';
-                } else {
-                    echo ' failed to upload<br />';
-                }
-                $response->redirect('/autograph');
+
+                Application::$app->db->insert("autographs", $input_array);
+                $autograph_id = Application::$app->db->select('autographs',$input_array,'id');
+                echo $autograph_id;
+                Application::$app->db->insert("user_autographs", ['user_id'=>Application::$app->session->get('user'), 'autograph_id'=>$autograph_id]);
+                $response->redirect("/autograph?id=$autograph_id");
                 return 'ok';
             }
         }

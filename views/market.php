@@ -12,7 +12,7 @@ $this->title='Marketplace | Signature'?>
 <body>
 <div class="searchbar">
     <div class="searchbar2">
-        <input type="search" placeholder="Search..">
+        <input type="search" id="" placeholder="Search..">
     </div>
 </div>
 <main>

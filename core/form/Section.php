@@ -30,4 +30,8 @@ class Section
     {
         return new Input($model, $class,$type, $script, $name, $accept,$onchange);
     }
+    public function image(Model $model, string $class,string $src, string $alt): Image
+    {
+        return new Image($model, $class,$src, $alt);
+    }
 }

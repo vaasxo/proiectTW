@@ -40,13 +40,19 @@ class Router
         $path = $this->request->getPath();
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
+        $autograph_id =substr($path, strpos($path,'/autograph/')+strlen('/autograph/'));
+        if(is_numeric($autograph_id)){
+            if (Application::$app->db->select('autographs',['id'=>$autograph_id],'*')!=null)
+                return Application::$app->view->renderView('autograph');
+        }
+
         if ($callback === false)
         {
             throw new NotFoundException();
         }
         if (is_string($callback))
         {
-            return Application::$app->view->renderView($callback);
+                return Application::$app->view->renderView($callback);
         }
         if(is_array($callback))
         {

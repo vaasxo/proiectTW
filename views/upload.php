@@ -72,7 +72,7 @@ $this->title='Upload | Signature'?>
             </div>
         <figure class="autograph-image-container">
             <label for="autograph-image">Upload image of the autograph <span class="required">*</span></label>
-            <img id="autograph-image" class="autograph-image" src="../images/upload.png" alt="Image failed loading" >
+            <?php echo $form->image($model,'autograph-image','../images/upload.png','Image failed loading')?>
             <?php echo $form->input($model,'image','file','none','photo','image/*',"document.getElementById('autograph-image').src=window.URL.createObjectURL(this.files[0]);
                                                                             document.getElementById('autograph-image').style.maxHeight='50vh'")?>
 
