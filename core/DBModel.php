@@ -49,6 +49,19 @@ abstract class DBModel extends Model
         $statement->execute();
         return $statement->fetchObject(static::class);
     }
+
+    public function update($vkey){
+        $tableName = $this->getTableName();
+        $statement = self::prepare("SELECT email FROM $tableName WHERE vkey = \"$vkey\"");
+        $statement->execute();
+        $user = $statement->fetchObject(static::class);
+        $email = $user->getEmail();
+        //echo $statement->fetchObject(static::class);
+
+        $statement = self::prepare("UPDATE $tableName SET status = 1 WHERE email = \"$email\"");
+        $statement->execute();
+    }
+
     public function findAll($where)
     {
         $tableName = static::getTableName();
@@ -65,34 +78,5 @@ abstract class DBModel extends Model
     public static function prepare($sql)
     {
         return Application::$app->db->pdo->prepare($sql);
-    }
-    public function findWorkouts($activity,$type,$durationMin,$durationMax)
-    {
-        $tableName = static::getTableName();
-        $sqlLike=[];
-        foreach ($type as $value)
-            array_push($sqlLike,"type LIKE '%$value%'");
-        $sqlType=implode(" OR ",$sqlLike);
-        $sqlEquals=[];
-        foreach ($activity as $value)
-            array_push($sqlEquals,"difficulty=$value");
-        $sqlDifficulty=implode(" OR ",$sqlEquals);
-        $sql="($sqlDifficulty) AND 
-            duration>=$durationMin AND 
-            duration<=$durationMax AND
-            ($sqlType)";
-        $statement=self::prepare("SELECT * FROM $tableName WHERE $sql");
-        $statement->execute();
-        $workout = $statement->fetchAll(PDO::FETCH_CLASS,static::class);
-
-
-        $userWorkout=Application::$app->userWorkoutClass;
-        $userWorkout->id_user=Application::$app->session->get('user');
-        Application::$app->session->set('workouts',$workout);
-        foreach($workout as $key=>$value){
-            $userWorkout->id_workout=$value->id;
-            $userWorkout->save();
-        }
-
     }
 }

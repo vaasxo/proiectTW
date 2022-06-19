@@ -39,11 +39,17 @@ class AuthController extends Controller
 
             if($user->validate() && $user->save())
             {
-                //Application::$app->session->setFlash('success', 'Thanks for registering');
+                $vkey = $user->getVkey();
+                $email = $user->getEmail();
+                $subject = "Email Verification";
+                $message = "<a href='http://localhost:8080/verify_account?$vkey'>Register account </a>";
+                $headers = "From: signatureproiecttw@gmail.com" . "\r\n";
+                $headers .= "MIME-version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                mail($email,$subject,$message,$headers);
+
                 Application::$app->response->redirect('/EmailConfirmation');
-                $msg = "Thank you for registering!";
-                echo "email".$user->getEmail();
-                mail($user->getEmail(),"My subject",$msg);
             }
             return Controller::render('register', [
                 'model' => $user
@@ -54,6 +60,15 @@ class AuthController extends Controller
             'model' => $user
         ]);
     }
+
+    public function verifyAccount(Request $request){
+        $user = new User();
+        $vkey = $request->getPathAfter();
+        $user->update($vkey);
+
+        Application::$app->response->redirect('/dashboard');
+    }
+
     public function logout(Request $request,Response $response){
         Application::$app->logout();
         $response->redirect('/');

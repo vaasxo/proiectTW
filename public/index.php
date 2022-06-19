@@ -8,6 +8,8 @@ $app->router->get('/homepage', 'homepage');
 $app->router->get('/about_us', 'about_us');
 $app->router->get('/contact', 'contact');
 $app->router->get('/EmailConfirmation', 'email_confirmation');
+$app->router->get('/verify_account', [controllers\AuthController::class,'verifyAccount']);
+
 $app->router->get('/template', 'template');
 
 $app->router->get('/logout', [controllers\AuthController::class,'logout']);
