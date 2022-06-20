@@ -25,5 +25,4 @@ if($result){
     $search_results = $result->fetch_assoc();
 }
 echo $search_results === "" ? "no suggestion" : $search_results['name'];
-?>
 

@@ -25,16 +25,15 @@ $this->title='Marketplace | Signature'?>
                 var XML = new XMLHttpRequest();
                 XML.onreadystatechange = function(){
                     if(XML.readyState === 4 && XML.status === 200){
-                        content.innerHTML = XML.responseText;
+                        content.innerHTML = XML.responseText
                     }
                 };
 
                 XML.open('GET', 'search?q='+x+'&'+Date.now(), true);
-                XML.setRequestHeader("","");
+                XML.setRequestHeader("Content-Type", "Text/HTML")
                 XML.send();
             }
         }
-
     </script>
 </div>
 <main>
