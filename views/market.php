@@ -12,9 +12,30 @@ $this->title='Marketplace | Signature'?>
 <body>
 <div class="searchbar">
     <div class="searchbar2">
-        <input type="search" id="" placeholder="Search..">
-        <div id="search_content"></div>
+        <input type="text" onkeyup="imu(this.value)" placeholder="Search..">
+        <div id="search_content"> result </div>
     </div>
+    <script type="text/javascript">
+        let content = document.getElementById('search_content');
+
+        function imu(x){
+            if(x.length === 0){
+                content.innerHTML = 'empty';
+            } else {
+                var XML = new XMLHttpRequest();
+                XML.onreadystatechange = function(){
+                    if(XML.readyState === 4 && XML.status === 200){
+                        content.innerHTML = XML.responseText;
+                    }
+                };
+
+                XML.open('GET', 'search?q='+x+'&'+Date.now(), true);
+                XML.setRequestHeader("","");
+                XML.send();
+            }
+        }
+
+    </script>
 </div>
 <main>
 
@@ -150,23 +171,4 @@ $this->title='Marketplace | Signature'?>
 <script><?php require_once("layouts/load_footer.js");?></script>
 
 </body>
-<script type="text/javascript">
-    let content = document.getElementById('search_content');
 
-    function imu(x){
-        if(x.length === 0){
-            content.innerHTML = 'empty';
-        } else {
-            const XML = new XMLHttpRequest();
-            XML.onreadystatechange = function(){
-                if(XML.readyState === 4 && XML.status === 200){
-                    content.innerHTML = XML.responseText;
-                }
-            };
-
-            XML.open('GET', 'search.php?data='+x, true);
-            XML.send();
-        }
-    }
-
-</script>

@@ -17,7 +17,7 @@ $query = $db->query("SELECT id, personality, field, context, location, object, m
 
 if ($query->num_rows > 0) {
     $delimiter = ",";
-    $filename = "members-data_" . date('Y-m-d') . ".csv";
+    $filename = "autographs-data_" . date('Y-m-d') . ".csv";
 
     // Create a file pointer
     $f = fopen('php://memory', 'w');

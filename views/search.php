@@ -13,17 +13,17 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
-$data = "k";
+$data = $_GET['q'];
 
-if(isset($_GET['q'])){
-    $data = $_GET['q'];
-}
+$sql = "SELECT name FROM tags WHERE name like '$data%' limit 1";
 
-$sql = "SELECT name FROM tags WHERE name like '$data%'";
 $result = $db->query($sql);
+
+$search_results = "";
 
 if($result){
     $search_results = $result->fetch_assoc();
-    echo "<h1>".$search_results['name']."</h1>";
 }
+echo $search_results === "" ? "no suggestion" : $search_results['name'];
+?>
 
