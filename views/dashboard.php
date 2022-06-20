@@ -20,24 +20,26 @@ $my_autograph_ids= \core\Application::$app->db->select('user_autographs',['user_
 <main>
     <span class="title">Your Collection</span>
     <div class="autograph-container">
-        <div class="autograph">
             <?php
 
 for($i=0; $i < count($my_autograph_ids); $i++) {
     $my_autographs = \core\Application::$app->db->select('autographs', ['id' => $my_autograph_ids[$i]], '*');
 
-    echo "<img class=\"autograph__image\" src=\"../uploaded_images/".$my_autographs[0]['image']."\
+    echo "
+        <div class=\"autograph\">
+    <img class=\"autograph__image\" src=\"../uploaded_images/".$my_autographs[0]['image']."\
                  alt=\"Image failed loading\">
             <h2>".$my_autographs[0]['personality']."<br>".$my_autographs[0]['location']."</h2>
             <a class=\"autograph__link\" href=\"/autograph/".$my_autographs[0]['id']."\">
             <p>View autograph</p>
-            </a>";
-}
-            ?>
-
-        </div>
-
+            </a>
     </div>
+
+    ";
+}?>
+    </div>
+
+        
 
 </main>
 <script><?php require_once("layouts/load_footer.js");?></script>
