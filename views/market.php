@@ -36,6 +36,7 @@ $this->title='Marketplace | Signature'?>
         }
     </script>
 </div>
+
 <main>
 
     <div class="block3">
@@ -105,66 +106,33 @@ $this->title='Marketplace | Signature'?>
         <a class="button-afisare" href="/exportRSS" id="exportRSS">Export to RSS feed</a>
 
     </div>
+    <?php
+
+    $market_autograph= \core\Application::$app->db->select('autographs',['marketplace'=>"on"],'*');
+    ?>
     <div class="autograph-container">
-        <div class="autograph">
-            <img class="autograph__image" src="https://cdn.shopify.com/s/files/1/2030/4039/products/Blanchett_Cate_large.jpg?v=1505155021"
-                 alt="Image failed loading">
-            <h2>Cate Blanchett<br>27 January 2008</h2>
-            <a class="autograph__link" href="autograph.html">
-                <p>View autograph</p>
-            </a>
-        </div>
-        <div class="autograph">
 
-            <img class="autograph__image" src="https://xlinegraphics.com/232-large_default/elon-musk-signature.jpg"
-                 alt="Image failed loading">
-            <h2>Elon Musk<br>11 April 2017</h2>
-            <a class="autograph__link" href="autograph.html">
-                <p>View autograph</p>
-            </a>
-        </div>
-        <div class="autograph">
 
-            <img class="autograph__image" src="https://cdn.shopify.com/s/files/1/0101/2750/7515/files/signature-neil-armstrong_medium.jpg?v=1584417716"
-                 alt="Image failed loading">
-            <h2>Neil Armstrong<br>23 February 1987</h2>
-            <a class="autograph__link" href="autograph.html">
-                <p>View autograph</p>
-            </a>
-        </div>
-        <div class="autograph">
+        <?php
 
-            <img class="autograph__image" src="https://cdn.shopify.com/s/files/1/0101/2750/7515/files/signature-dalai-lama_medium.jpg?v=1584417794"
-                 alt="Image failed loading">
-            <h2>Dalai Lama 14th<br>6 August 1998</h2>
-            <a class="autograph__link" href="autograph.html">
-                <p>View autograph</p>
-            </a>
-        </div>
-        <div class="autograph">
+        for($i=0; $i < count($market_autograph); $i++) {
 
-            <img class="autograph__image" src="https://www.invaluable.com/blog/wp-content/uploads/sites/77/2018/07/famous-signatures-legibility.jpg" alt="Image failed loading">
-            <h2>Andy Warhol<br>July 2018</h2>
-            <a class="autograph__link" href="autograph.html">
-                <p>View autograph</p>
+            echo "
+        <div class=\"autograph\">
+    <img class=\"autograph__image\" src=\"../uploaded_images/".$market_autograph[$i]['image']."\
+                 alt=\"Image failed loading\">
+            <h2>".$market_autograph[$i]['personality']."<br>".$market_autograph[$i]['location']."</h2>
+            <a class=\"autograph__link\" href=\"/autograph/".$market_autograph[$i]['id']."\">
+            <p>View autograph</p>
             </a>
-        </div>
-        <div class="autograph">
+    </div>
 
-            <img class="autograph__image" src="https://image.invaluable.com/housePhotos/Novartia/89/722689/H20754-L287632162_original.jpg" alt="Image failed loading">
-            <h2>Pablo Picasso<br>4 February 1965</h2>
-            <a class="autograph__link" href="autograph.html">
-                <p>View autograph</p>
-            </a>
-        </div>
-        <div class="autograph">
+    ";
+        }?>
 
-            <img class="autograph__image" src="https://i.ebayimg.com/images/g/DJ8AAOSwghpe9j7n/s-l1600.jpg" alt="Image failed loading">
-            <h2>Angus Young, Brian Johnson, Malcom Young<br>17 July 2014</h2>
-            <a class="autograph__link" href="autograph.html">
-                <p>View autograph</p>
-            </a>
-        </div>
+
+
+
     </div>
 </main>
 <script><?php require_once("layouts/load_footer.js");?></script>
