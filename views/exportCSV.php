@@ -37,8 +37,8 @@ if ($query->num_rows > 0) {
 
     $personalities = $db->query("SELECT personality ,COUNT(*) AS total FROM autographs GROUP BY personality ORDER BY COUNT(*) DESC");
 
-    while ($row = $query->fetch_row()) {
-        $lineData = array($row[0], $row[1]);
+    while ($row = $personalities->fetch_assoc()) {
+        $lineData = array($row['personality'], $row['total']);
         fputcsv($f, $lineData, $delimiter);
     }
 

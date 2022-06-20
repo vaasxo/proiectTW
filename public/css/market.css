@@ -94,7 +94,9 @@ span{
     display:flex;
     align-items: center;
   }
-
+.search_content{
+    color:#ffffff;
+}
   .block3{
     float:none;
     color:#ffffff;

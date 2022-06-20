@@ -3,7 +3,7 @@
  * @var $this \core\View
  */
 
-$this->title='Marketplace | Signature'?>
+$this->title = 'Marketplace | Signature' ?>
 <style>
     <?php include '../public/css/market.css'; ?>
     <?php include '../public/css/header.css'; ?>
@@ -13,18 +13,18 @@ $this->title='Marketplace | Signature'?>
 <div class="searchbar">
     <div class="searchbar2">
         <input type="text" onkeyup="imu(this.value)" placeholder="Search..">
-        <div id="search_content"> </div>
+        <div id="search_content" class="search_content"></div>
     </div>
     <script type="text/javascript">
         let content = document.getElementById('search_content');
 
         function imu(x){
             if(x.length === 0){
-                content.innerHTML = 'empty';
+                content.innerHTML = '';
             } else {
                 var XML = new XMLHttpRequest();
-                XML.onreadystatechange = function(){
-                    if(XML.readyState === 4 && XML.status === 200){
+                XML.onreadystatechange = function () {
+                    if (XML.readyState === 4 && XML.status === 200) {
                         content.innerHTML = XML.responseText
                     }
                 };
@@ -44,31 +44,31 @@ $this->title='Marketplace | Signature'?>
         <div class="block4">
             <h4>Rang</h4>
             <div class="checkbox">
-                <input type="checkbox" id="S" />
+                <input type="checkbox" id="S"/>
                 <label for="S">S</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="A" />
+                <input type="checkbox" id="A"/>
                 <label for="A">A</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="B" />
+                <input type="checkbox" id="B"/>
                 <label for="B">B</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="C" />
+                <input type="checkbox" id="C"/>
                 <label for="C">C</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="D" />
+                <input type="checkbox" id="D"/>
                 <label for="D">D</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="E" />
+                <input type="checkbox" id="E"/>
                 <label for="E">E</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="F" />
+                <input type="checkbox" id="F"/>
                 <label for="F">F</label>
             </div>
         </div>
@@ -76,27 +76,27 @@ $this->title='Marketplace | Signature'?>
         <div class="block4">
             <h4>Perioada</h4>
             <div class="checkbox">
-                <input type="checkbox" id="2020-prezent" />
+                <input type="checkbox" id="2020-prezent"/>
                 <label for="2020-prezent">2020-prezent</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="2010-2019" />
+                <input type="checkbox" id="2010-2019"/>
                 <label for="2010-2019">2010-2019</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="2000-2009" />
+                <input type="checkbox" id="2000-2009"/>
                 <label for="2000-2009">2000-2009</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="1990-1999" />
+                <input type="checkbox" id="1990-1999"/>
                 <label for="1990-1999">1990-1999</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="1980-1989" />
+                <input type="checkbox" id="1980-1989"/>
                 <label for="1980-1989">1980-1989</label>
             </div>
             <div class="checkbox">
-                <input type="checkbox" id="mai_vechi" />
+                <input type="checkbox" id="mai_vechi"/>
                 <label for="mai_vechi">mai vechi</label>
             </div>
         </div>
@@ -108,34 +108,32 @@ $this->title='Marketplace | Signature'?>
     </div>
     <?php
 
-    $market_autograph= \core\Application::$app->db->select('autographs',['marketplace'=>"on"],'*');
+    $market_autograph = \core\Application::$app->db->select('autographs', ['marketplace' => "on"], '*');
     ?>
     <div class="autograph-container">
 
 
         <?php
 
-        for($i=0; $i < count($market_autograph); $i++) {
+        for ($i = 0; $i < count($market_autograph); $i++) {
 
             echo "
         <div class=\"autograph\">
-    <img class=\"autograph__image\" src=\"../uploaded_images/".$market_autograph[$i]['image']."\
+    <img class=\"autograph__image\" src=\"../uploaded_images/" . $market_autograph[$i]['image'] . "\
                  alt=\"Image failed loading\">
-            <h2>".$market_autograph[$i]['personality']."<br>".$market_autograph[$i]['location']."</h2>
-            <a class=\"autograph__link\" href=\"/autograph/".$market_autograph[$i]['id']."\">
+            <h2>" . $market_autograph[$i]['personality'] . "<br>" . $market_autograph[$i]['location'] . "</h2>
+            <a class=\"autograph__link\" href=\"/autograph/" . $market_autograph[$i]['id'] . "\">
             <p>View autograph</p>
             </a>
     </div>
 
     ";
-        }?>
-
-
+        } ?>
 
 
     </div>
 </main>
-<script><?php require_once("layouts/load_footer.js");?></script>
+<script><?php require_once("layouts/load_footer.js"); ?></script>
 
 </body>
 

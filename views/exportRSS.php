@@ -25,7 +25,7 @@ echo "<?xml version='1.0' encoding='UTF-8'?>
 <description>Autograph collection</description>
 <language>en-us</language>";
 
-while($row = mysqli_fetch_array($query))
+while($row = $query->fetch_array())
 {
     $title=$row['personality'];
     $link="https://www.signature.com/autographs/{$row['id']}";
