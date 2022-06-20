@@ -20,40 +20,40 @@ $autograph_field_list= \core\Application::$app->db->select('autographs',['id'=>$
 ?>
 <main>
     <div class="autograph-container">
-        <img class="autograph-image" src="../uploaded_images/<?php echo $autograph_field_list['image'];?>" alt="Image failed loading">
+        <img class="autograph-image" src="../uploaded_images/<?php echo $autograph_field_list[0]['image'];?>" alt="Image failed loading">
         <form class="autograph-data">
             <div class="item">
                 <br><label for="personality">Obtained from personality:</label>
-                <input class="item-input" type="text" id="personality" name="personality" value="<?php echo $autograph_field_list['personality'];?>"><br>
+                <input class="item-input" type="text" id="personality" name="personality" value="<?php echo $autograph_field_list[0]['personality'];?>"><br>
             </div>
 
             <div class="item">
                 <label for="field">Field:</label>
-                <input class="item-input" type="text" id="field" name="field" value="<?php echo $autograph_field_list['field'];?>"><br>
+                <input class="item-input" type="text" id="field" name="field" value="<?php echo $autograph_field_list[0]['field'];?>"><br>
             </div>
             <div class="item">
                 <label for="context">Context:</label>
-                <input class="item-input" type="text" id="context" name="context" value="<?php echo $autograph_field_list['context'];?>"><br>
+                <input class="item-input" type="text" id="context" name="context" value="<?php echo $autograph_field_list[0]['context'];?>"><br>
             </div>
             <div class="item">
                 <label for="location">Location:</label>
-                <input class="item-input" type="text" id="location" name="location" value="<?php echo $autograph_field_list['location'];?>"><br>
+                <input class="item-input" type="text" id="location" name="location" value="<?php echo $autograph_field_list[0]['location'];?>"><br>
             </div>
             <div class="item">
                 <label for="object">Placed on object:</label>
-                <input class="item-input" type="text" id="object" name="object" value="<?php echo $autograph_field_list['object'];?>"><br>
+                <input class="item-input" type="text" id="object" name="object" value="<?php echo $autograph_field_list[0]['object'];?>"><br>
             </div>
             <div class="item">
                 <label for="mentions">Special mentions:</label>
-                <input class="item-input" type="text" id="mentions" name="mentions" value="<?php echo $autograph_field_list['mentions'];?>"><br>
+                <input class="item-input" type="text" id="mentions" name="mentions" value="<?php echo $autograph_field_list[0]['mentions'];?>"><br>
             </div>
             <div class="item">
                 <label for="measures">Measures:</label>
-                <input class="item-input" type="text" id="measures" name="measures" value="<?php echo $autograph_field_list['measures'];?>"><br>
+                <input class="item-input" type="text" id="measures" name="measures" value="<?php echo $autograph_field_list[0]['measures'];?>"><br>
             </div>
             <div class="item">
                 <label for="price">Estimated value:</label>
-                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list['estimated_value'];?>$"><br>
+                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list[0]['estimated_value'];?>$"><br>
             </div>
             <div class="item">
                 <?php //check if current autograph is managed by current user
@@ -77,11 +77,15 @@ $autograph_field_list= \core\Application::$app->db->select('autographs',['id'=>$
             <br><span class="tags">Tags: </span>
             <div class="flex-list">
                 <ul class="autograph-tags">
-                    <li class="autograph-tag">drawing</li>
-                    <li class="autograph-tag">portrait</li>
-                    <li class="autograph-tag">woman</li>
-                    <li class="autograph-tag">frame</li>
-                    <li class="autograph-tag">celebrity</li>
+                    <?php
+                    $autograph_tags_list= \core\Application::$app->db->select('autograph_tags',['autograph_id'=>$id],'tag_id');
+                    $autograph_names_list=array();
+                    foreach ($autograph_tags_list as $autograph_tag_id)
+                        $autograph_names_list[]= \core\Application::$app->db->select('tags',['id'=>$autograph_tag_id],'name');
+
+                    foreach ($autograph_names_list as $autograph_name)
+                        for($i=0;$i<count($autograph_name);$i++)
+                            echo "<li class=\"autograph-tag\">$autograph_name[$i]</li>";?>
                 </ul>
             </div>
             <section class="button_container">

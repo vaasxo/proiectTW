@@ -47,7 +47,7 @@ class SiteController extends Controller
                     $result = move_uploaded_file($tmpFile, $newFile);
                     Application::$app->db->insert("autographs", $input_array);
 
-                    $autograph_id = Application::$app->db->select('autographs',$input_array,'id');
+                    $autograph_id = Application::$app->db->select('autographs',$input_array,'id')[0];
                     foreach ($input_array as $key=>$value) {
                         if(str_starts_with($key,'tags')){
                             try{
@@ -56,7 +56,7 @@ class SiteController extends Controller
                                 echo 'same tag already exists';
                             }
 
-                            $tag_id = Application::$app->db->select('tags',['name'=>$value],'id');
+                            $tag_id = Application::$app->db->select('tags',['name'=>$value],'id')[0];
                             Application::$app->db->insert('autograph_tags',['autograph_id'=>$autograph_id,'tag_id'=>$tag_id]);
                         }
 

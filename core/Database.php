@@ -111,15 +111,17 @@ class Database
         $SQL_after_where = substr($SQL_after_where, 0, -5);
         $SQL = "SELECT $row_name FROM $table_name WHERE $SQL_after_where";
 //        echo $SQL;
+        $result_array=array();
         try{
             $statement = $this->pdo->query($SQL);
             while ($row = $statement->fetch()) {
                 if ($row_name == '*' || str_contains($row_name,',')) { //returns an array of key value pairs
-                    return $row;
+                    $result_array[] = $row;
                 }
                 else //returns only the wanted row_name
-                    return $row[$row_name];
+                    $result_array[] = $row[$row_name];
             }
+            return $result_array;
 
         }catch(PDOException $e){
             throw new ServerErrorException();
