@@ -15,6 +15,11 @@ $this->title = 'Marketplace | Signature' ?>
         <input type="text" onkeyup="imu(this.value)" placeholder="Search..">
         <div id="search_content" class="search_content"></div>
     </div>
+    <section class="button_container" type="submit">
+        <button class="login_button">
+            Log In
+        </button>
+    </section>
     <script type="text/javascript">
         let content = document.getElementById('search_content');
 
