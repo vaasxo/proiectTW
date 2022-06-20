@@ -3,6 +3,7 @@
  * @var $this View
  */
 
+use core\Application;
 use core\View;
 
 $this->title='Your Profile | Signature'?>
@@ -11,6 +12,32 @@ $this->title='Your Profile | Signature'?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
 </style>
+<?php
+$id=Application::$app->session->get('user');
+$my_autograph_ids= \core\Application::$app->db->select('user_autographs',['user_id'=>$id],'autograph_id');
+
+$my_top=array();
+$count=0;
+
+for($i=0; $i < count($my_autograph_ids); $i++)
+{
+    if($count>8)
+    {break;}
+$my_autographs = \core\Application::$app->db->select('autographs', ['id' => $my_autograph_ids[$i]], 'personality')[0];
+if(array_key_exists($my_autographs,$my_top))
+{$my_top[$my_autographs]+=1;}
+   else
+   {    $my_top[$my_autographs]=1;
+       $count++;
+   }
+
+}
+foreach($my_top as $key=>$value)
+{
+
+    echo $key.", ".$value."<br>";
+}
+?>
 <body>
 <main>
     <section class="main-container">
@@ -38,57 +65,28 @@ $this->title='Your Profile | Signature'?>
 
                     </div>
                 </section>
-
+<!--luam userul, selectam
+-->
 
                 <div class="support_text_2">
                     <h1>
                         Autograph score
                     </h1>
                     <ul class="ul-ranks">
-                        <li class="li-ranks">
-                            <span class="Srank">S Rank </span>
-                            <span class="Snr">1000</span>
-                        </li>
+                            <?php
+                            foreach($my_top as $key=>$value)
+                            {
+                                echo "<li class=\"li-ranks/\">";
+                                echo "<span class=\"Srank\">$key </span>";
+                                echo "<span class=\"Snr\">$value</span>";
+                                echo "</li>";
+                            }
+                            echo "<li class=\"li-ranks/\">";
+                            echo "<span class=\"Srank\">Total celebritati </span>";
+                            echo "<span class=\"Snr\">".count($my_top)."</span>";
+                            echo "</li>";
+                            ?>
 
-                        <li class="li-ranks">
-                            <span class="Arank">A Rank </span>
-                            <span class="Anr">1000</span>
-                        </li>
-
-                        <li class="li-ranks">
-                            <span class="Brank">B Rank </span>
-                            <span class="Bnr">1000</span>
-                        </li>
-
-                        <li class="li-ranks">
-                            <span class="Crank">C Rank </span>
-                            <span class="Cnr">1000</span>
-                        </li>
-
-                        <li class="li-ranks">
-                            <span class="Drank">D Rank </span>
-                            <span class="Dnr">1000</span>
-                        </li>
-
-                        <li class="li-ranks">
-                            <span class="Erank">E Rank </span>
-                            <span class="Enr">1000</span>
-                        </li>
-
-                        <li class="li-ranks">
-                            <span class="Frank">F Rank </span>
-                            <span class="Fnr">1000</span>
-                        </li>
-
-                        <li class="li-ranks">
-                            <span class="counter">Total </span>
-                            <span class="Total">1000</span>
-                        </li>
-
-                        <li class="li-ranks">
-                            <span class="online-time">Days spent </span>
-                            <span class="time-spent">5000</span>
-                        </li>
 
                     </ul>
                 </div>
