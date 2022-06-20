@@ -81,6 +81,7 @@ foreach($my_top as $key=>$value)
                                 echo "<span class=\"Snr\">$value</span>";
                                 echo "</li>";
                             }
+
                             echo "<li class=\"li-ranks/\">";
                             echo "<span class=\"Srank\">Total celebritati </span>";
                             echo "<span class=\"Snr\">".count($my_top)."</span>";
