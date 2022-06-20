@@ -1,8 +1,8 @@
 <?php
-$dbHost     = "localhost";
+$dbHost = "localhost";
 $dbUsername = "root";
 $dbPassword = "root";
-$dbName     = "proiecttw";
+$dbName = "proiecttw";
 
 // Create database connection
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -13,7 +13,7 @@ if ($db->connect_error) {
 }
 
 // Fetch records from database
-$query = $db->query("SELECT id, personality, field, context, location, object, mentions, measures, estimated_value FROM autographs");
+$query = $db->query("SELECT id, personality, field, context, location, object, mentions, measures, price FROM autographs");
 
 if ($query->num_rows > 0) {
     $delimiter = ",";
@@ -23,12 +23,22 @@ if ($query->num_rows > 0) {
     $f = fopen('php://memory', 'w');
 
     // Set column headers
-    $fields = array('ID', 'PERSONALITY', 'FIELD', 'CONTEXT', 'LOCATION', 'OBJECT', 'MENTIONS', 'MEASURES', 'ESTIMATED_VALUE');
+    $fields = array('ID', 'PERSONALITY', 'FIELD', 'CONTEXT', 'LOCATION', 'OBJECT', 'MENTIONS', 'MEASURES', 'price');
     fputcsv($f, $fields, $delimiter);
 
     // Output each row of the data, format line as csv and write to file pointer
     while ($row = $query->fetch_assoc()) {
-        $lineData = array($row['id'], $row['personality'], $row['field'], $row['context'], $row['location'], $row['object'], $row['mentions'], $row['measures'], $row['estimated_value']);
+        $lineData = array($row['id'], $row['personality'], $row['field'], $row['context'], $row['location'], $row['object'], $row['mentions'], $row['measures'], $row['price']);
+        fputcsv($f, $lineData, $delimiter);
+    }
+
+    $fields = array('PERSONALITY', 'NUM_AUTOGRAPHS');
+    fputcsv($f, $fields, $delimiter);
+
+    $personalities = $db->query("SELECT personality ,COUNT(*) FROM autographs GROUP BY personality ORDER BY COUNT(*) DESC");
+
+    while ($row = $query->fetch_assoc()) {
+        $lineData = array($row['personality'], $row['count']);
         fputcsv($f, $lineData, $delimiter);
     }
 

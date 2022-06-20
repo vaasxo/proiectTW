@@ -11,6 +11,9 @@ class View
     public function renderView($view,$params=[])
     {
         $viewContent = $this->renderOnlyView($view,$params);
+        if($view == 'search'){
+            return $viewContent;
+        }
         $layoutContent = $this->layoutContent();
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }

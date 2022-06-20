@@ -53,7 +53,7 @@ $autograph_field_list= \core\Application::$app->db->select('autographs',['id'=>$
             </div>
             <div class="item">
                 <label for="price">Estimated value:</label>
-                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list[0]['estimated_value'];?>$"><br>
+                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list[0]['price'];?>$"><br>
             </div>
             <div class="item">
                 <?php //check if current autograph is managed by current user

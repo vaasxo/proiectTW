@@ -19,10 +19,8 @@ $sql = "SELECT name FROM tags WHERE name like '$data%' limit 1";
 
 $result = $db->query($sql);
 
-$search_results = "";
-
 if($result){
     $search_results = $result->fetch_assoc();
 }
-echo $search_results === "" ? "no suggestion" : $search_results['name'];
+echo $search_results['name'] ?? "no results";
 

@@ -16,7 +16,7 @@ class m0003_autograph
                 object VARCHAR(255) NOT NULL,
                 mentions VARCHAR(255),
                 measures VARCHAR(255) NOT NULL,
-                estimated_value INT NOT NULL,
+                price INT NOT NULL,
                 image BLOB NOT NULL
 )ENGINE=INNODB";
         $db->pdo->exec($SQL);
