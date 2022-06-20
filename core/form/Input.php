@@ -15,6 +15,7 @@ class Input
     public string $name;
     public string $accept;
     public string $onchange;
+    public bool $required;
 
     /**
      * Input constructor.
@@ -22,8 +23,12 @@ class Input
      * @param string $class
      * @param string $type
      * @param string $script
+     * @param string $name
+     * @param string $accept
+     * @param string $onchange
+     * @param bool $required
      */
-    public function __construct(Model $model, string $class,string $type, string $script, string $name, string $accept, string $onchange)
+    public function __construct(Model $model, string $class,string $type, string $script, string $name, string $accept, string $onchange, bool $required)
     {
         $this->model=$model;
         $this->class=$class;
@@ -32,14 +37,15 @@ class Input
         $this->name=$name;
         $this->accept=$accept;
         $this->onchange=$onchange;
+        $this->required=$required;
 
     }
     public function __toString(){
-        $input_field=sprintf('<input class="%s" id="%s" type="%s" name="%s" ',
+        $input_field=sprintf('<input class="%s" id="%s" type="%s" name="%s"',
             $this->class,
             $this->class,
             $this->type,
-            $this->class);
+            $this->name);
         if ($this->script!='none'){
             $input_field.= sprintf('onclick="%s()"', $this->script);
         }
@@ -51,6 +57,9 @@ class Input
         }
         if ($this->onchange!='none'){
             $input_field.= sprintf('onchange="%s"', $this->onchange);
+        }
+        if ($this->required===true){
+            $input_field.=' required';
         }
 
 

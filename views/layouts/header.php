@@ -12,7 +12,7 @@
     <header class="menu_bar">
         <div class="top-menu">
             <a href="/homepage" class="site-logo">
-                <img src="images/logo.png" alt="logo">
+                <img src="/images/logo.png" alt="logo">
             </a>
             <nav class="menu">
                 <ul role="menu">

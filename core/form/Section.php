@@ -10,7 +10,7 @@ class Section
 {
     public static function begin($class, $method): Section
     {
-        echo sprintf('<form class="%s" method="%s" enctype="multipart/form-data">', $class, $method);
+        echo sprintf('<form id="%s" class="%s" method="%s" enctype="multipart/form-data">',$class, $class, $method);
         return new Section;
     }
 
@@ -26,9 +26,9 @@ class Section
     {
         return new Fieldset($model,$class,$question,$type,$attributes);
     }
-    public function input(Model $model, string $class,string $type, string $script, string $name, string $accept, string $onchange): Input
+    public function input(Model $model, string $class,string $type, string $script, string $name, string $accept, string $onchange, bool $required): Input
     {
-        return new Input($model, $class,$type, $script, $name, $accept,$onchange);
+        return new Input($model, $class,$type, $script, $name, $accept,$onchange, $required);
     }
     public function image(Model $model, string $class,string $src, string $alt): Image
     {

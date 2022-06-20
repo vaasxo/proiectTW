@@ -14,7 +14,6 @@ class m0001_user{
                 lastname VARCHAR(255),
                 status INT,
                 vkey VARCHAR(255) NOT NULL
-                
 )ENGINE=INNODB";
         $db->pdo->exec($SQL);
     }

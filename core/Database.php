@@ -4,6 +4,7 @@
 namespace core;
 
 use core\Application;
+use core\exception\ServerErrorException;
 use PDO;
 use PDOException;
 require_once __DIR__. '/../vendor/autoload.php';
@@ -84,7 +85,7 @@ class Database
         $SQL_fields ='';
         $SQL_values='';
         foreach($input as $key=>$value)
-            if($value!='' && $key!='tag'){
+            if($value!='' && !str_starts_with($key, 'tags')){
                 $SQL_fields .= $key.', ';
                 $SQL_values .= "'".$value."', ";
             }
@@ -95,22 +96,35 @@ class Database
         $statement=$this->pdo->prepare($SQL);
         $statement->execute();
     }
-    public function select($table_name,$input,$row_name)
-    {
 
-        $SQL_after_where='';
-        foreach($input as $key=>$value)
-            if($value!='' && $key!='tag'){
-                $SQL_after_where .= $key." = '".$value."' AND ";
+    /**
+     * @throws ServerErrorException
+     */
+    public function select($table_name, $input, $row_name)
+    {
+        $SQL_after_where = '';
+        foreach ($input as $key => $value) {
+            if ($value != '' && !str_starts_with($key, 'tags')) {
+                $SQL_after_where .= $key . " = '" . $value . "' AND ";
             }
-        $SQL_after_where=substr($SQL_after_where,0,-5);
+        }
+        $SQL_after_where = substr($SQL_after_where, 0, -5);
         $SQL = "SELECT $row_name FROM $table_name WHERE $SQL_after_where";
 //        echo $SQL;
-        $statement=$this->pdo->query($SQL);
-        while($row = $statement->fetch()) {
-            return $row;
+        try{
+            $statement = $this->pdo->query($SQL);
+            while ($row = $statement->fetch()) {
+                if ($row_name == '*' || str_contains($row_name,',')) { //returns an array of key value pairs
+                    return $row;
+                }
+                else //returns only the wanted row_name
+                    return $row[$row_name];
+            }
+
+        }catch(PDOException $e){
+            throw new ServerErrorException();
         }
-        return null;
+    return null;
     }
 
     public function prepare($sql): \PDOStatement

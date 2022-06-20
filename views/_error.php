@@ -9,8 +9,11 @@ use core\View;
 
 if($exception->getCode()===404)
     $this->title = 'Page not found';
-else
+else if($exception->getCode()===403)
     $this->title = 'No permission';
+else
+    $this->title = 'Server Error';
+
 ?>
 <style>
     <?php include '../public/css/header.css'?>

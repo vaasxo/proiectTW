@@ -1,7 +1,10 @@
 <?php
 
 namespace core;
+use core\exception\ForbiddenException;
 use core\exception\NotFoundException;
+use core\exception\ServerErrorException;
+use core\Middlewares\AuthMiddleware;
 
 class Router
 {
@@ -34,16 +37,25 @@ class Router
 
     /**
      * @throws NotFoundException
+     * @throws ForbiddenException
+     * @throws ServerErrorException
      */
     public function resolve()
     {
         $path = $this->request->getPath();
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
+
+
         $autograph_id =substr($path, strpos($path,'/autograph/')+strlen('/autograph/'));
         if(is_numeric($autograph_id)){
-            if (Application::$app->db->select('autographs',['id'=>$autograph_id],'*')!=null)
+            if (Application::$app->db->select('autographs',['id'=>$autograph_id],'*')!=null){
+                if(Application::isGuest())
+                    throw new ForbiddenException();
                 return Application::$app->view->renderView('autograph');
+            }
+            else
+                throw new NotFoundException();
         }
 
         if ($callback === false)

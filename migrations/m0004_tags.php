@@ -9,7 +9,8 @@ class m0004_tags
         $db= Application::$app->db;
         $SQL="CREATE TABLE tags(
                 id INT AUTO_INCREMENT PRIMARY KEY,
-                name VARCHAR(255) NOT NULL
+                name VARCHAR(255) NOT NULL,
+                UNIQUE(name)
 )ENGINE=INNODB";
         $db->pdo->exec($SQL);
 
