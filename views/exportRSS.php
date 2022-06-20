@@ -13,27 +13,28 @@ if ($db->connect_error) {
 }
 
 // Fetch records from database
-$query = $db->query("SELECT id, personality, field, context, location, object, mentions, measures, estimated_value FROM autographs");
+$query = $db->query("SELECT id, personality, context FROM autographs");
 
-header( "Content-type: text/xml");
+header("Content-type: text/xml");
 
 echo "<?xml version='1.0' encoding='UTF-8'?>
- <rss version='2.0'>
- <channel>
- <title>w3schools.in | RSS</title>
- <link>https://www.w3schools.in/</link>
- <description>Cloud RSS</description>
- <language>en-us</language>";
+<rss version='2.0'>
+<channel>
+<title>Signature</title>
+<link>https://signature.com </link>
+<description>Autograph collection</description>
+<language>en-us</language>";
 
-while($row = mysqli_fetch_array($query)){
-    $title=$row["title"];
-    $link=$row["link"];
-    $description=$row["description"];
+while($row = mysqli_fetch_array($query))
+{
+    $title=$row['personality'];
+    $link="https://www.signature.com/autographs/{$row['id']}";
+    $description=$row['context'];
 
     echo "<item>
-   <title>$title</title>
-   <link>$link</link>
-   <description>$description</description>
-   </item>";
+<title>$title</title>
+<link>$link</link>
+<description>$description</description>
+</item>";
 }
 echo "</channel></rss>";

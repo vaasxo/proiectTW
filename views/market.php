@@ -4,7 +4,7 @@
  */
 
 $this->title='Marketplace | Signature'?>
-<style type="text/css">
+<style>
     <?php include '../public/css/market.css'; ?>
     <?php include '../public/css/header.css'; ?>
     <?php include '../public/css/footer.css'; ?>
@@ -13,7 +13,7 @@ $this->title='Marketplace | Signature'?>
 <div class="searchbar">
     <div class="searchbar2">
         <input type="text" onkeyup="imu(this.value)" placeholder="Search..">
-        <div id="search_content"> result </div>
+        <div id="search_content"> </div>
     </div>
     <script type="text/javascript">
         let content = document.getElementById('search_content');
