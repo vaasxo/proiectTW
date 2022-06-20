@@ -56,7 +56,7 @@ $user_name=Application::$app->db->select('users',['id'=>$user_id],'email')[0];
             </div>
             <div class="item">
                 <label for="price">Estimated value:</label>
-                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list[0]['price'];?>$"><br>
+                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list[0]['estimated_value'];?>$"><br>
             </div>
             <div class="item">
                 <?php //check if current autograph is managed by current user
@@ -69,7 +69,7 @@ $user_name=Application::$app->db->select('users',['id'=>$user_id],'email')[0];
                 <section class="managed_by_user">User:<?php echo $user_name;?>
                 </section>
                 <section class="button_container">
-                    <a href="#" class="bid_button" onclick="get_bid_amount()">
+                    <a type="submit" class="bid_button" onclick="get_bid_amount()">
                         Bid
                     </a>
                     <a href="/dashboard" class="trade_button">

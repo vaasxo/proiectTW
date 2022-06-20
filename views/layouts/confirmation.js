@@ -43,6 +43,17 @@ function get_confirmation_marketplace(){
 }
 function get_bid_amount(){
     let amount = window.prompt("Enter the bid amount in $")
-    if(amount !== null)
-        alert('Placed bid of '+amount+'$')
+    if(amount !== null){
+
+        var httpc = new XMLHttpRequest();
+        var url = "send_notification.php";
+        httpc.open("POST", url, true);
+        httpc.onreadystatechange = function() { //Call a function when the state changes.
+            if(httpc.readyState == 4 && httpc.status == 200) { // complete and no errors
+                alert('Placed bid of '+httpc.responseText+'$'); // some processing here, or whatever you want to do with the response
+            }
+        };
+        httpc.send(amount);
+    }
+
 }
