@@ -92,7 +92,7 @@ class Database
         $SQL_fields=substr($SQL_fields,0,-2);
         $SQL_values=substr($SQL_values,0,-2);
         $SQL = "INSERT INTO $table_name ($SQL_fields) VALUES($SQL_values)";
-//        echo $SQL;
+        echo $SQL;
         $statement=$this->pdo->prepare($SQL);
         $statement->execute();
     }
