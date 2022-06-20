@@ -110,7 +110,7 @@ class Database
         }
         $SQL_after_where = substr($SQL_after_where, 0, -5);
         $SQL = "SELECT $row_name FROM $table_name WHERE $SQL_after_where";
-//        echo $SQL;
+//        echo $SQL.'<br>';
         $result_array=array();
         try{
             $statement = $this->pdo->query($SQL);
@@ -124,6 +124,7 @@ class Database
             return $result_array;
 
         }catch(PDOException $e){
+            echo $e->getMessage();
             throw new ServerErrorException();
         }
     return null;

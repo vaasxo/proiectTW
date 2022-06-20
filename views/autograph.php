@@ -17,6 +17,9 @@ $this->title='Autograph | Signature'?>
 $url = $_SERVER['REQUEST_URI'];
 $id = substr($url, strpos($url,'/autograph/')+strlen('/autograph/'));
 $autograph_field_list= \core\Application::$app->db->select('autographs',['id'=>$id],'*');
+$managed_by_user_id = \core\Application::$app->db->select('user_autographs', ['autograph_id'=>$id],'*');
+$user_id=$managed_by_user_id[0]['user_id'];
+$user_name=Application::$app->db->select('users',['id'=>$user_id],'email')[0];
 ?>
 <main>
     <div class="autograph-container">
@@ -63,6 +66,8 @@ $autograph_field_list= \core\Application::$app->db->select('autographs',['id'=>$
                     Add to Marketplace
                 </label>
                 <?php else:?>
+                <section class="managed_by_user">User:<?php echo $user_name;?>
+                </section>
                 <section class="button_container">
                     <a href="#" class="bid_button" onclick="get_bid_amount()">
                         Bid
@@ -88,14 +93,16 @@ $autograph_field_list= \core\Application::$app->db->select('autographs',['id'=>$
                             echo "<li class=\"autograph-tag\">$autograph_name[$i]</li>";?>
                 </ul>
             </div>
+            <?php if (\core\Application::$app->db->select('user_autographs',['user_id'=>Application::$app->session->get('user'), 'autograph_id'=>$id],'*')!=null):?>
             <section class="button_container">
                 <a href="/dashboard" class="save_button" onclick="alert('Modifications saved successfully.')">
                     Save
                 </a>
             </section>
+            <?php endif?>
         </form>
     </div>
 </main>
 <script><?php require_once("layouts/load_footer.js");?></script>
-
+<script><?php require_once("layouts/confirmation.js");?></script>
 </body>
