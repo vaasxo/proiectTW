@@ -15,7 +15,8 @@ $app->router->get('/pass_reset_confirmation', 'passResetConfirmation');
 $app->router->get('/news', 'news');
 $app->router->get('/exportCSV', 'exportCSV');
 $app->router->get('/exportRSS', 'exportRSS');
-$app->router->get('/search', 'search');
+$app->router->get('/liveSearch', 'liveSearch');
+$app->router->get('/getAuByTag', 'getAuByTag');
 $app->router->get('/send_notification', 'send_notification');
 
 

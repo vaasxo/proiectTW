@@ -12,12 +12,12 @@ $this->title = 'Marketplace | Signature' ?>
 <body>
 <div class="searchbar">
     <div class="searchbar2">
-        <input type="text" onkeyup="imu(this.value)" placeholder="Search..">
+        <input type="text" onkeyup="imu(this.value)" placeholder="Search.." id="search_bar_content">
         <div id="search_content" class="search_content"></div>
     </div>
     <section class="button_container" type="submit">
-        <button class="Search">
-            Log In
+        <button class="button-afisare" onclick="getAutographsByTag()">
+            Search
         </button>
     </section>
     <script type="text/javascript">
@@ -34,7 +34,25 @@ $this->title = 'Marketplace | Signature' ?>
                     }
                 };
 
-                XML.open('GET', 'search?q='+x+'&'+Date.now(), true);
+                XML.open('GET', 'liveSearch?q='+x+'&'+Date.now(), true);
+                XML.setRequestHeader("Content-Type", "Text/HTML")
+                XML.send();
+            }
+        }
+
+        function getAutographsByTag(){
+            let search_input = document.getElementById('search_bar_content').value
+            if(search_input.length === 0){
+                //do nothing
+            } else {
+                var XML = new XMLHttpRequest();
+                XML.onreadystatechange = function () {
+                    if (XML.readyState === 4 && XML.status === 200) {
+                        //render the autographs
+                    }
+                };
+
+                XML.open('GET', 'getAuByTag?q='+search_input+'&'+Date.now(), true);
                 XML.setRequestHeader("Content-Type", "Text/HTML")
                 XML.send();
             }
