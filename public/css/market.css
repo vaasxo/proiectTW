@@ -141,16 +141,20 @@ span{
 
 .searchbar2{
     background-color:#24252AEF;
-    display: flex;
-    background-position: right;
+
+
     margin-top: 1%;
     margin-bottom: 2%;
     width: 50%;
-    flex-wrap: wrap;
-    justify-content: center;
+
 
   }
 .searchbar{
     margin-right: 2rem;
     margin-left: 2rem;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }

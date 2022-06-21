@@ -16,7 +16,7 @@ $this->title = 'Marketplace | Signature' ?>
         <div id="search_content" class="search_content"></div>
     </div>
     <section class="button_container" type="submit">
-        <button class="login_button">
+        <button class="Search">
             Log In
         </button>
     </section>
