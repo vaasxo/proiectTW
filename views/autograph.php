@@ -56,7 +56,7 @@ $user_name=Application::$app->db->select('users',['id'=>$user_id],'email')[0];
             </div>
             <div class="item">
                 <label for="price">Estimated value:</label>
-                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list[0]['estimated_value'];?>$"><br>
+                <input class="item-input" type="text" id="price" name="price" value="<?php echo $autograph_field_list[0]['price'];?>$"><br>
             </div>
             <div class="item">
                 <?php //check if current autograph is managed by current user
@@ -72,6 +72,28 @@ $user_name=Application::$app->db->select('users',['id'=>$user_id],'email')[0];
                     <a type="submit" class="bid_button" onclick="get_bid_amount()">
                         Bid
                     </a>
+                    <div id="bid_amount"></div>
+                    <script>
+                        function get_bid_amount(){
+                            let content = document.getElementById('bid_amount')
+                            let amount = window.prompt("Enter the bid amount in $")
+                            if(amount !== null){
+
+                                var httpc = new XMLHttpRequest();
+                                httpc.onreadystatechange = function() { //Call a function when the state changes.
+                                    if(httpc.readyState === 4 && httpc.status === 200) { // complete and no errors
+                                        content.innerText = httpc.responseText; // some processing here, or whatever you want to do with the response
+                                    }
+                                    else{
+                                        content.innerText = httpc.
+                                    }
+                                };
+                                httpc.open('GET', 'send_notification?q='+amount+'%'+Date.now(), true);
+                                httpc.send();
+                            }
+
+                        }
+                    </script>
                     <a href="/dashboard" class="trade_button">
                         Trade
                     </a>
@@ -104,5 +126,5 @@ $user_name=Application::$app->db->select('users',['id'=>$user_id],'email')[0];
     </div>
 </main>
 <script><?php require_once("layouts/load_footer.js");?></script>
-<script><?php require_once("layouts/confirmation.js");?></script>
+<script type="text/javascript"><?php require_once("layouts/confirmation.js");?></script>
 </body>

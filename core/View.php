@@ -11,7 +11,7 @@ class View
     public function renderView($view,$params=[])
     {
         $viewContent = $this->renderOnlyView($view,$params);
-        if($view == 'search'){
+        if($view == 'search' || $view == 'send_notification'){
             return $viewContent;
         }
         $layoutContent = $this->layoutContent();

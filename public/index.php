@@ -16,6 +16,7 @@ $app->router->get('/news', 'news');
 $app->router->get('/exportCSV', 'exportCSV');
 $app->router->get('/exportRSS', 'exportRSS');
 $app->router->get('/search', 'search');
+$app->router->get('/send_notification', 'send_notification');
 
 
 $app->router->get('/verify_account', [controllers\AuthController::class,'verifyAccount']);
