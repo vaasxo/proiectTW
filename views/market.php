@@ -40,7 +40,9 @@ $this->title = 'Marketplace | Signature' ?>
             }
         }
 
+
         function getAutographsByTag(){
+            let content1 = document.getElementById('autograph-container')
             let search_input = document.getElementById('search_bar_content').value
             if(search_input.length === 0){
                 //do nothing
@@ -48,7 +50,7 @@ $this->title = 'Marketplace | Signature' ?>
                 var XML = new XMLHttpRequest();
                 XML.onreadystatechange = function () {
                     if (XML.readyState === 4 && XML.status === 200) {
-                        //render the autographs
+                        content1.innerText = XML.responseText
                     }
                 };
 
